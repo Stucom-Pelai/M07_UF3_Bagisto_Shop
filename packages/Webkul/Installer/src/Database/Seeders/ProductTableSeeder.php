@@ -938,6 +938,13 @@ class ProductTableSeeder extends Seeder
                 'path'       => $this->productImages('product/11', '12.webp'),
                 'product_id' => 11,
                 'position'   => 2,
+            ], //Nuevo producto abajo
+              [
+                'id'         => 18,
+                'type'       => 'image',
+                'path'       => $this->productImages('product/12', '12.webp'),
+                'product_id' => 12,
+                'position'   => 1,
             ],
         ]);
 
