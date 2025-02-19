@@ -938,7 +938,14 @@ class ProductTableSeeder extends Seeder
                 'path'       => $this->productImages('product/11', '12.webp'),
                 'product_id' => 11,
                 'position'   => 2,
-            ],
+            ], //Nuevo producto abajo
+              [
+                'id'         => 18,
+                'type'       => 'image',
+                'path'       => $this->productImages('product/12', 'jacketYellow.webp'),
+                'product_id' => 12,
+                'position'   => 1,
+            ], 
         ]);
 
         DB::table('product_up_sells')->insert([
@@ -1328,7 +1335,36 @@ class ProductTableSeeder extends Seeder
                     'visible_individually'  => 1,
                     'color'                 => 2,
                     'size'                  => 8,
-                ],
+                ], [
+                    'sku'                   => 'SP-010',
+                    'type'                  => 'simple',
+                    'product_number'        => null,
+                    'name'                  => trans('installer::app.seeders.sample-products.product-flat.12.name', [], $locale),
+                    'short_description'     => trans('installer::app.seeders.sample-products.product-flat.12.short-description', [], $locale),
+                    'description'           => trans('installer::app.seeders.sample-products.product-flat.12.description', [], $locale),
+                    'url_key'               => 'omniheat-mens-solid-hooded-puffer-jacket-yellow-s',
+                    'new'                   => 0,
+                    'featured'              => 0,
+                    'status'                => 1,
+                    'meta_title'            => trans('installer::app.seeders.sample-products.product-flat.12.meta-title', [], $locale),
+                    'meta_keywords'         => trans('installer::app.seeders.sample-products.product-flat.12.meta-keywords', [], $locale),
+                    'meta_description'      => trans('installer::app.seeders.sample-products.product-flat.12.meta-description', [], $locale),
+                    'price'                 => 17,
+                    'special_price'         => null,
+                    'special_price_from'    => null,
+                    'special_price_to'      => null,
+                    'weight'                => 1,
+                    'created_at'            => $now,
+                    'locale'                => $locale,
+                    'channel'               => 'default',
+                    'attribute_family_id'   => 1,
+                    'product_id'            => 12,
+                    'updated_at'            => $now,
+                    'parent_id'             => 7,
+                    'visible_individually'  => 1,
+                    'color'                 => 3,
+                    'size'                  => 6,
+                ]
             ];
         }
 
