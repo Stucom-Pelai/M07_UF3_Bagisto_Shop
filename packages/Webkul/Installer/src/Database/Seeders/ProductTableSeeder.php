@@ -848,11 +848,19 @@ class ProductTableSeeder extends Seeder
                 'path'       => $this->productImages('product/2', '2.webp'),
                 'product_id' => 2,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 3,
                 'type'       => 'image',
-                'path'       => $this->productImages('product/3', '3.webp'),
+                'path'       => $this->productImages('product/13', '13.webp'),
                 'product_id' => 3,
+                'position'   => 1,
+            ], 
+            [
+                'id'         => 18,
+                'type'       => 'image',
+                'path'       => $this->productImages('product/3', '3.webp'),
+                'product_id' => 12,
                 'position'   => 1,
             ], [
                 'id'         => 4,
@@ -983,6 +991,7 @@ class ProductTableSeeder extends Seeder
                 'parent_id'  => 2,
                 'child_id'   => 4,
             ],
+
         ]);
 
         DB::table('product_relations')->insert([
@@ -1078,7 +1087,7 @@ class ProductTableSeeder extends Seeder
                     'parent_id'            => null,
                     'visible_individually' => 1,
                 ], [
-                    'sku'                  => 'SP-003',
+                    'sku'                  => 'SP-012',
                     'type'                 => 'simple',
                     'product_number'       => null,
                     'name'                 => trans('installer::app.seeders.sample-products.product-flat.3.name', [], $locale),
@@ -1100,7 +1109,7 @@ class ProductTableSeeder extends Seeder
                     'locale'               => $locale,
                     'channel'              => 'default',
                     'attribute_family_id'  => 1,
-                    'product_id'           => 3,
+                    'product_id'           => 12,
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
@@ -1328,6 +1337,36 @@ class ProductTableSeeder extends Seeder
                     'visible_individually'  => 1,
                     'color'                 => 2,
                     'size'                  => 8,
+                ],
+                [
+                    'sku'                   => 'SP-003',
+                    'type'                  => 'simple',
+                    'product_number'        => null,
+                    'name'                  => trans('Bufanda', [], $locale),
+                    'short_description'     => trans('Bufanda', [], $locale),
+                    'description'           => trans('Bufanda', [], $locale),
+                    'url_key'               => 'AAAbufanda',
+                    'new'                   => 1,
+                    'featured'              => 1,
+                    'status'                => 1,
+                    'meta_title'            => trans('Bufanda', [], $locale),
+                    'meta_keywords'         => trans('Bufanda', [], $locale),
+                    'meta_description'      => trans('Bufanda', [], $locale),
+                    'price'                 => 21,
+                    'special_price'         => 20,
+                    'special_price_from'    => $now,
+                    'special_price_to'      => $currentDate->addDays(5)->format('Y-m-d H:i:s'),
+                    'weight'                => 1,
+                    'created_at'            => $currentDate->subDays(1)->format('Y-m-d H:i:s'),
+                    'locale'                => $locale,
+                    'channel'               => 'default',
+                    'attribute_family_id'   => 1,
+                    'product_id'            => 3,
+                    'updated_at'            => $currentDate->subDays()->format('Y-m-d H:i:s'),
+                    'parent_id'             => null,
+                    'visible_individually'  => 1,
+                    'color'                 => 2,
+                    'size'                  => 0,
                 ],
             ];
         }
