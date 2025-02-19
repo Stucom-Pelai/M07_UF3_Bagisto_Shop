@@ -67,7 +67,12 @@ class AttributeOptionTableSeeder extends Seeder
                 'admin_name'   => trans('installer::app.seeders.attribute.attribute-options.xl', [], $defaultLocale),
                 'sort_order'   => 4,
                 'attribute_id' => 24,
-            ],
+            ], [
+                'id'           => 10,
+                'admin_name'   => trans('installer::app.seeders.attribute.attribute-options.xxl', [], $defaultLocale),
+                'sort_order'   => 4,
+                'attribute_id' => 24,
+            ], 
         ]);
 
         $locales = $parameters['allowed_locales'] ?? [$defaultLocale];
@@ -110,6 +115,10 @@ class AttributeOptionTableSeeder extends Seeder
                     'locale'              => $locale,
                     'label'               => trans('installer::app.seeders.attribute.attribute-options.xl', [], $locale),
                     'attribute_option_id' => 9,
+                ], [
+                    'locale'              => $locale,
+                    'label'               => trans('installer::app.seeders.attribute.attribute-options.xxl', [], $locale),
+                    'attribute_option_id' => 10,
                 ],
             ]);
         }
