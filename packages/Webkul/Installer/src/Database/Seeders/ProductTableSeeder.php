@@ -118,7 +118,6 @@ class ProductTableSeeder extends Seeder
                         'unique_id'                                  => $uniqueId,
                         'json_value'                                 => null,
                     ]);
-
                 }
             }
         }
@@ -141,13 +140,15 @@ class ProductTableSeeder extends Seeder
                 'associated_product_id' => 1,
                 'qty'                   => 5,
                 'sort_order'            => 1,
-            ], [
+            ],
+            [
                 'id'                    => 2,
                 'product_id'            => 5,
                 'associated_product_id' => 3,
                 'qty'                   => 5,
                 'sort_order'            => 2,
-            ], [
+            ],
+            [
                 'id'                    => 3,
                 'product_id'            => 5,
                 'associated_product_id' => 4,
@@ -163,19 +164,22 @@ class ProductTableSeeder extends Seeder
                 'type'        => 'radio',
                 'is_required' => 1,
                 'sort_order'  => 0,
-            ], [
+            ],
+            [
                 'id'          => 2,
                 'product_id'  => 6,
                 'type'        => 'radio',
                 'is_required' => 1,
                 'sort_order'  => 1,
-            ], [
+            ],
+            [
                 'id'          => 3,
                 'product_id'  => 6,
                 'type'        => 'checkbox',
                 'is_required' => 1,
                 'sort_order'  => 2,
-            ], [
+            ],
+            [
                 'id'          => 4,
                 'product_id'  => 6,
                 'type'        => 'checkbox',
@@ -193,7 +197,8 @@ class ProductTableSeeder extends Seeder
                 'is_user_defined'          => 1,
                 'is_default'               => 0,
                 'sort_order'               => 0,
-            ], [
+            ],
+            [
                 'id'                       => 2,
                 'product_id'               => 2,
                 'product_bundle_option_id' => 2,
@@ -201,7 +206,8 @@ class ProductTableSeeder extends Seeder
                 'is_user_defined'          => 1,
                 'is_default'               => 1,
                 'sort_order'               => 1,
-            ], [
+            ],
+            [
                 'id'                       => 3,
                 'product_id'               => 3,
                 'product_bundle_option_id' => 3,
@@ -209,7 +215,8 @@ class ProductTableSeeder extends Seeder
                 'is_user_defined'          => 1,
                 'is_default'               => 1,
                 'sort_order'               => 2,
-            ], [
+            ],
+            [
                 'id'                       => 4,
                 'product_id'               => 4,
                 'product_bundle_option_id' => 4,
@@ -226,15 +233,18 @@ class ProductTableSeeder extends Seeder
                     'locale'                   => $locale,
                     'label'                    => trans('installer::app.seeders.sample-products.product-bundle-option-translations.1.label', [], $locale),
                     'product_bundle_option_id' => 1,
-                ], [
+                ],
+                [
                     'locale'                   => $locale,
                     'label'                    => trans('installer::app.seeders.sample-products.product-bundle-option-translations.2.label', [], $locale),
                     'product_bundle_option_id' => 2,
-                ], [
+                ],
+                [
                     'locale'                   => $locale,
                     'label'                    => trans('installer::app.seeders.sample-products.product-bundle-option-translations.3.label', [], $locale),
                     'product_bundle_option_id' => 3,
-                ], [
+                ],
+                [
                     'locale'                   => $locale,
                     'label'                    => trans('installer::app.seeders.sample-products.product-bundle-option-translations.4.label', [], $locale),
                     'product_bundle_option_id' => 4,
@@ -246,7 +256,8 @@ class ProductTableSeeder extends Seeder
             [
                 'product_id'   => 7,
                 'attribute_id' => 23,
-            ], [
+            ],
+            [
                 'product_id'   => 7,
                 'attribute_id' => 24,
             ],
@@ -264,7 +275,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 14,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 2,
                 'product_id'           => 1,
                 'customer_group_id'    => 2,
@@ -275,7 +287,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 14,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 3,
                 'product_id'           => 1,
                 'customer_group_id'    => 3,
@@ -286,7 +299,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 14,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 4,
                 'product_id'           => 2,
                 'customer_group_id'    => 1,
@@ -297,7 +311,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 17,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 5,
                 'product_id'           => 2,
                 'customer_group_id'    => 2,
@@ -308,7 +323,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 17,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 6,
                 'product_id'           => 2,
                 'customer_group_id'    => 3,
@@ -319,7 +335,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 17,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 7,
                 'product_id'           => 3,
                 'customer_group_id'    => 1,
@@ -330,7 +347,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 8,
                 'product_id'           => 3,
                 'customer_group_id'    => 2,
@@ -341,7 +359,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 9,
                 'product_id'           => 3,
                 'customer_group_id'    => 3,
@@ -352,7 +371,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 10,
                 'product_id'           => 4,
                 'customer_group_id'    => 1,
@@ -363,7 +383,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 11,
                 'product_id'           => 4,
                 'customer_group_id'    => 2,
@@ -374,7 +395,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 12,
                 'product_id'           => 4,
                 'customer_group_id'    => 3,
@@ -385,7 +407,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 13,
                 'product_id'           => 5,
                 'customer_group_id'    => 1,
@@ -396,7 +419,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 14,
                 'product_id'           => 5,
                 'customer_group_id'    => 2,
@@ -407,7 +431,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 15,
                 'product_id'           => 5,
                 'customer_group_id'    => 3,
@@ -418,7 +443,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 16,
                 'product_id'           => 6,
                 'customer_group_id'    => 1,
@@ -429,7 +455,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 17,
                 'product_id'           => 6,
                 'customer_group_id'    => 2,
@@ -440,7 +467,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 18,
                 'product_id'           => 6,
                 'customer_group_id'    => 3,
@@ -451,7 +479,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 19,
                 'product_id'           => 8,
                 'customer_group_id'    => 1,
@@ -462,7 +491,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 14,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 20,
                 'product_id'           => 8,
                 'customer_group_id'    => 2,
@@ -473,7 +503,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 14,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 21,
                 'product_id'           => 8,
                 'customer_group_id'    => 3,
@@ -484,7 +515,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 14,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 22,
                 'product_id'           => 9,
                 'customer_group_id'    => 1,
@@ -495,7 +527,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 17,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 23,
                 'product_id'           => 9,
                 'customer_group_id'    => 2,
@@ -506,7 +539,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 17,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 24,
                 'product_id'           => 9,
                 'customer_group_id'    => 3,
@@ -517,7 +551,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 17,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 25,
                 'product_id'           => 10,
                 'customer_group_id'    => 1,
@@ -528,7 +563,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 26,
                 'product_id'           => 10,
                 'customer_group_id'    => 2,
@@ -539,7 +575,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 27,
                 'product_id'           => 10,
                 'customer_group_id'    => 3,
@@ -550,7 +587,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 28,
                 'product_id'           => 11,
                 'customer_group_id'    => 1,
@@ -561,7 +599,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 29,
                 'product_id'           => 11,
                 'customer_group_id'    => 2,
@@ -572,7 +611,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 30,
                 'product_id'           => 11,
                 'customer_group_id'    => 3,
@@ -583,7 +623,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 21,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 31,
                 'product_id'           => 7,
                 'customer_group_id'    => 1,
@@ -594,7 +635,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 17,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 32,
                 'product_id'           => 7,
                 'customer_group_id'    => 2,
@@ -605,7 +647,8 @@ class ProductTableSeeder extends Seeder
                 'regular_max_price'    => 17,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 33,
                 'product_id'           => 7,
                 'customer_group_id'    => 3,
@@ -630,7 +673,8 @@ class ProductTableSeeder extends Seeder
                 'created_at'        => $now,
                 'updated_at'        => $now,
                 'unique_id'         => '002|1|1',
-            ], [
+            ],
+            [
                 'id'                => 2,
                 'qty'               => 2,
                 'value_type'        => 'fixed',
@@ -640,7 +684,8 @@ class ProductTableSeeder extends Seeder
                 'created_at'        => $now,
                 'updated_at'        => $now,
                 'unique_id'         => '002|1|2',
-            ], [
+            ],
+            [
                 'id'                => 3,
                 'qty'               => 2,
                 'value_type'        => 'fixed',
@@ -650,7 +695,8 @@ class ProductTableSeeder extends Seeder
                 'created_at'        => $now,
                 'updated_at'        => $now,
                 'unique_id'         => '002|1|3',
-            ], [
+            ],
+            [
                 'id'                => 4,
                 'qty'               => 3,
                 'value_type'        => 'fixed',
@@ -660,7 +706,8 @@ class ProductTableSeeder extends Seeder
                 'created_at'        => $now,
                 'updated_at'        => $now,
                 'unique_id'         => '003|1|1',
-            ], [
+            ],
+            [
                 'id'                => 5,
                 'qty'               => 3,
                 'value_type'        => 'fixed',
@@ -670,7 +717,8 @@ class ProductTableSeeder extends Seeder
                 'created_at'        => $now,
                 'updated_at'        => $now,
                 'unique_id'         => '003|1|2',
-            ], [
+            ],
+            [
                 'id'                => 6,
                 'qty'               => 3,
                 'value_type'        => 'fixed',
@@ -691,43 +739,50 @@ class ProductTableSeeder extends Seeder
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
-            ], [
+            ],
+            [
                 'id'                   => 2,
                 'product_id'           => 2,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
-            ], [
+            ],
+            [
                 'id'                   => 3,
                 'product_id'           => 3,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
-            ], [
+            ],
+            [
                 'id'                   => 4,
                 'product_id'           => 4,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
-            ], [
+            ],
+            [
                 'id'                   => 5,
                 'product_id'           => 8,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
-            ], [
+            ],
+            [
                 'id'                   => 6,
                 'product_id'           => 9,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
-            ], [
+            ],
+            [
                 'id'                   => 7,
                 'product_id'           => 10,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
-            ], [
+            ],
+            [
                 'id'                   => 8,
                 'product_id'           => 11,
                 'vendor_id'            => 0,
@@ -744,56 +799,64 @@ class ProductTableSeeder extends Seeder
                 'channel_id'           => 1,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 2,
                 'qty'                  => 100,
                 'product_id'           => 2,
                 'channel_id'           => 1,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 3,
                 'qty'                  => 100,
                 'product_id'           => 3,
                 'channel_id'           => 1,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 4,
                 'qty'                  => 100,
                 'product_id'           => 4,
                 'channel_id'           => 1,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 5,
                 'qty'                  => 100,
                 'product_id'           => 8,
                 'channel_id'           => 1,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 6,
                 'qty'                  => 100,
                 'product_id'           => 9,
                 'channel_id'           => 1,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 7,
                 'qty'                  => 100,
                 'product_id'           => 10,
                 'channel_id'           => 1,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ], [
+            ],
+            [
                 'id'                   => 8,
                 'qty'                  => 100,
                 'product_id'           => 11,
                 'channel_id'           => 1,
                 'created_at'           => $now,
                 'updated_at'           => $now,
-            ],  [
+            ],
+            [
                 'id'                   => 9,
                 'qty'                  => 0,
                 'product_id'           => 7,
@@ -808,29 +871,41 @@ class ProductTableSeeder extends Seeder
             [
                 'product_id'  => 1,
                 'category_id' => 3,
-            ], [
+            ],
+            [
                 'product_id'  => 2,
                 'category_id' => 3,
-            ], [
+            ],
+            [
                 'product_id'  => 3,
                 'category_id' => 3,
-            ], [
+            ],
+            [
                 'product_id'  => 4,
                 'category_id' => 3,
-            ], [
+            ],
+            [
                 'product_id'  => 5,
                 'category_id' => 3,
-            ], [
+            ],
+            [
                 'product_id'  => 6,
                 'category_id' => 3,
-            ], [
+            ],
+            [
                 'product_id'  => 7,
                 'category_id' => 3,
-            ], [
+            ],
+            [
                 'product_id'  => 8,
                 'category_id' => 3,
-            ], [
+            ],
+            [
                 'product_id'  => 9,
+                'category_id' => 3,
+            ], 
+            [
+                'product_id'  => 12,
                 'category_id' => 3,
             ],
         ]);
@@ -842,102 +917,125 @@ class ProductTableSeeder extends Seeder
                 'path'       => $this->productImages('product/1', '1.webp'),
                 'product_id' => 1,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 2,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/2', '2.webp'),
                 'product_id' => 2,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 3,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/3', '3.webp'),
                 'product_id' => 3,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 4,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/4', '4.webp'),
                 'product_id' => 4,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 5,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/5', '5.webp'),
                 'product_id' => 5,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 6,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/6', '5.webp'),
                 'product_id' => 6,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 7,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/7', '6.webp'),
                 'product_id' => 7,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 8,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/7', '7.webp'),
                 'product_id' => 7,
                 'position'   => 2,
-            ], [
+            ],
+            [
                 'id'         => 9,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/7', '8.webp'),
                 'product_id' => 7,
                 'position'   => 3,
-            ], [
+            ],
+            [
                 'id'         => 10,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/8', '9.webp'),
                 'product_id' => 8,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 11,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/8', '10.webp'),
                 'product_id' => 8,
                 'position'   => 2,
-            ], [
+            ],
+            [
                 'id'         => 12,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/9', '9.webp'),
                 'product_id' => 9,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 13,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/9', '10.webp'),
                 'product_id' => 9,
                 'position'   => 2,
-            ], [
+            ],
+            [
                 'id'         => 14,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/10', '11.webp'),
                 'product_id' => 10,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 15,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/10', '12.webp'),
                 'product_id' => 10,
                 'position'   => 2,
-            ], [
+            ],
+            [
                 'id'         => 16,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/11', '11.webp'),
                 'product_id' => 11,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 17,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/11', '12.webp'),
                 'product_id' => 11,
                 'position'   => 2,
+            ],
+            [
+                'id'         => 18,
+                'type'       => 'image',
+                'path'       => $this->productImages('product/12', '13.webp'),
+                'product_id' => 12,
+                'position'   => 1,
             ],
         ]);
 
@@ -945,19 +1043,24 @@ class ProductTableSeeder extends Seeder
             [
                 'parent_id'  => 4,
                 'child_id'   => 1,
-            ], [
+            ],
+            [
                 'parent_id'  => 1,
                 'child_id'   => 2,
-            ], [
+            ],
+            [
                 'parent_id'  => 1,
                 'child_id'   => 3,
-            ], [
+            ],
+            [
                 'parent_id'  => 2,
                 'child_id'   => 3,
-            ], [
+            ],
+            [
                 'parent_id'  => 1,
                 'child_id'   => 4,
-            ], [
+            ],
+            [
                 'parent_id'  => 2,
                 'child_id'   => 4,
             ],
@@ -967,19 +1070,24 @@ class ProductTableSeeder extends Seeder
             [
                 'parent_id'  => 4,
                 'child_id'   => 1,
-            ], [
+            ],
+            [
                 'parent_id'  => 1,
                 'child_id'   => 2,
-            ], [
+            ],
+            [
                 'parent_id'  => 1,
                 'child_id'   => 3,
-            ], [
+            ],
+            [
                 'parent_id'  => 2,
                 'child_id'   => 3,
-            ], [
+            ],
+            [
                 'parent_id'  => 1,
                 'child_id'   => 4,
-            ], [
+            ],
+            [
                 'parent_id'  => 2,
                 'child_id'   => 4,
             ],
@@ -989,19 +1097,24 @@ class ProductTableSeeder extends Seeder
             [
                 'parent_id' => 1,
                 'child_id'  => 4,
-            ], [
+            ],
+            [
                 'parent_id' => 2,
                 'child_id'  => 1,
-            ], [
+            ],
+            [
                 'parent_id' => 3,
                 'child_id'  => 1,
-            ], [
+            ],
+            [
                 'parent_id' => 3,
                 'child_id'  => 2,
-            ], [
+            ],
+            [
                 'parent_id' => 4,
                 'child_id'  => 1,
-            ], [
+            ],
+            [
                 'parent_id' => 4,
                 'child_id'  => 2,
             ],
@@ -1050,7 +1163,8 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
-                ], [
+                ],
+                [
                     'sku'                  => 'SP-002',
                     'type'                 => 'simple',
                     'product_number'       => null,
@@ -1077,7 +1191,8 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
-                ], [
+                ],
+                [
                     'sku'                  => 'SP-003',
                     'type'                 => 'simple',
                     'product_number'       => null,
@@ -1104,7 +1219,8 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
-                ], [
+                ],
+                [
                     'sku'                  => 'SP-004',
                     'type'                 => 'simple',
                     'product_number'       => null,
@@ -1131,7 +1247,8 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
-                ], [
+                ],
+                [
                     'sku'                  => 'GP-001',
                     'type'                 => 'grouped',
                     'product_number'       => null,
@@ -1158,7 +1275,8 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
-                ], [
+                ],
+                [
                     'sku'                  => 'BP-001',
                     'type'                 => 'bundle',
                     'product_number'       => null,
@@ -1185,7 +1303,8 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
-                ], [
+                ],
+                [
                     'sku'                  => 'CP-001',
                     'type'                 => 'configurable',
                     'product_number'       => '',
@@ -1212,7 +1331,8 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
-                ], [
+                ],
+                [
                     'sku'                   => 'SP-005',
                     'type'                  => 'simple',
                     'product_number'        => null,
@@ -1241,7 +1361,8 @@ class ProductTableSeeder extends Seeder
                     'visible_individually'  => 1,
                     'color'                 => 3,
                     'size'                  => 7,
-                ], [
+                ],
+                [
                     'sku'                   => 'SP-006',
                     'type'                  => 'simple',
                     'product_number'        => null,
@@ -1270,7 +1391,8 @@ class ProductTableSeeder extends Seeder
                     'visible_individually'  => 1,
                     'color'                 => 3,
                     'size'                  => 8,
-                ], [
+                ],
+                [
                     'sku'                   => 'SP-007',
                     'type'                  => 'simple',
                     'product_number'        => null,
@@ -1299,7 +1421,8 @@ class ProductTableSeeder extends Seeder
                     'visible_individually'  => 1,
                     'color'                 => 2,
                     'size'                  => 7,
-                ], [
+                ],
+                [
                     'sku'                   => 'SP-008',
                     'type'                  => 'simple',
                     'product_number'        => null,
@@ -1329,6 +1452,36 @@ class ProductTableSeeder extends Seeder
                     'color'                 => 2,
                     'size'                  => 8,
                 ],
+                [
+                    'sku'                   => 'SP-009',
+                    'type'                  => 'simple',
+                    'product_number'        => null,
+                    'name'                  => trans('installer::app.seeders.sample-products.product-flat.12.name', [], $locale),
+                    'short_description'     => trans('installer::app.seeders.sample-products.product-flat.12.short-description', [], $locale),
+                    'description'           => trans('installer::app.seeders.sample-products.product-flat.12.description', [], $locale),
+                    'url_key'               => 'omniheat-mens-solid-hooded-puffer-jacket-grey-l',
+                    'new'                   => 0,
+                    'featured'              => 0,
+                    'status'                => 1,
+                    'meta_title'            => trans('installer::app.seeders.sample-products.product-flat.12.meta-title', [], $locale),
+                    'meta_keywords'         => trans('installer::app.seeders.sample-products.product-flat.12.meta-keywords', [], $locale),
+                    'meta_description'      => trans('installer::app.seeders.sample-products.product-flat.12.meta-description', [], $locale),
+                    'price'                 => 17,
+                    'special_price'         => null,
+                    'special_price_from'    => null,
+                    'special_price_to'      => null,
+                    'weight'                => 1,
+                    'created_at'            => $now,
+                    'locale'                => $locale,
+                    'channel'               => 'default',
+                    'attribute_family_id'   => 1,
+                    'product_id'            => 12,
+                    'updated_at'            => $now,
+                    'parent_id'             => 7,
+                    'visible_individually'  => 1,
+                    'color'                 => 3,
+                    'size'                  => 8,
+                ]
             ];
         }
 
@@ -1342,16 +1495,16 @@ class ProductTableSeeder extends Seeder
      */
     public function productImages($targetPath, $file, $default = null)
     {
-        if (file_exists(base_path(self::BASE_PATH.$file))) {
-            return Storage::putFile($targetPath, new File(base_path(self::BASE_PATH.$file)));
+        if (file_exists(base_path(self::BASE_PATH . $file))) {
+            return Storage::putFile($targetPath, new File(base_path(self::BASE_PATH . $file)));
         }
 
         if (! $default) {
             return;
         }
 
-        if (file_exists(base_path(self::BASE_PATH.$default))) {
-            return Storage::putFile($targetPath, new File(base_path(self::BASE_PATH.$default)));
+        if (file_exists(base_path(self::BASE_PATH . $default))) {
+            return Storage::putFile($targetPath, new File(base_path(self::BASE_PATH . $default)));
         }
     }
 }
