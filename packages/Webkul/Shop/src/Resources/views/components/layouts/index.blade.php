@@ -101,7 +101,6 @@
             @if ($hasHeader)
                 <x-shop::layouts.header />
             @endif
-
             {!! view_render_event('bagisto.shop.layout.content.before') !!}
 
             <!-- Page Content Blade Component -->

@@ -387,6 +387,14 @@ return [
                     'name'             => 'Winter Wear',
                     'slug'             => 'winter-wear',
                 ],
+                '5' => [
+                    'description'      => 'Woman Category Description',
+                    'meta-description' => 'Woman Category Meta Description',
+                    'meta-keywords'    => 'Woman Category Meta Keywords',
+                    'meta-title'       => 'Woman Category Meta Title',
+                    'name'             => 'Woman',
+                    'slug'             => 'woman',
+                ],
             ],
         ],
 
