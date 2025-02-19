@@ -22,9 +22,9 @@
         </a>
 
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.logo.after') !!}
-
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.category.before') !!}
-
+        
+        {{-- <<<------------------------------------->>> --}}
         <v-desktop-category>
             <div class="flex items-center gap-5">
                 <span
@@ -43,15 +43,14 @@
                 ></span>
             </div>
         </v-desktop-category>
-
+        {{-- <<<-------------------------------------->>> --}}
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.category.after') !!}
     </div>
 
     <!-- Right Nagivation Section -->
     <div class="flex items-center gap-x-9 max-[1100px]:gap-x-6 max-lg:gap-x-8">
-
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.search_bar.before') !!}
-
+        
         <!-- Search Bar Container -->
         <div class="relative w-full">
             <form
