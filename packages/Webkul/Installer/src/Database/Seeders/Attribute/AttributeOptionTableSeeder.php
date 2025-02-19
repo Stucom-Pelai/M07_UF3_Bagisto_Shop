@@ -70,7 +70,7 @@ class AttributeOptionTableSeeder extends Seeder
             ], [
                 'id'           => 10,
                 'admin_name'   => trans('installer::app.seeders.attribute.attribute-options.xxl', [], $defaultLocale),
-                'sort_order'   => 4,
+                'sort_order'   => 5,
                 'attribute_id' => 24,
             ], 
         ]);
