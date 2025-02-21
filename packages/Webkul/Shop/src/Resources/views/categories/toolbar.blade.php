@@ -32,7 +32,6 @@
                             ></span>
                         </button>
                     </x-slot>
-                
                     <!-- Dropdown Content -->
                     <x-slot:menu>
                         <x-shop::dropdown.menu.item
