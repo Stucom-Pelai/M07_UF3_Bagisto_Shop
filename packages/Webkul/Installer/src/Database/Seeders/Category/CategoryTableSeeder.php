@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
  *
  * Command: php artisan db:seed --class=Webkul\\Category\\Database\\Seeders\\CategoryTableSeeder
  */
+
 class CategoryTableSeeder extends Seeder
 {
     /**
@@ -90,7 +91,8 @@ class CategoryTableSeeder extends Seeder
                 'created_at'    => $now,
                 'updated_at'    => $now,
 
-            ], [
+            ],
+            [
                 'id'            => 3,
                 'position'      => 1,
                 'logo_path'     => null,
@@ -118,6 +120,20 @@ class CategoryTableSeeder extends Seeder
                 'created_at'    => $now,
                 'updated_at'    => $now,
             ],
+            [
+                'id'            => 4,
+                'position'      => 1,
+                'logo_path'     => null,
+                'status'        => 1,
+                'display_mode'  => 'products_and_description',
+                '_lft'          => 1,
+                '_rgt'          => 1,
+                'parent_id'     => 2,
+                'additional'    => null,
+                'banner_path'   => null,
+                'created_at'    => $now,
+                'updated_at'    => $now,
+            ],
         ]);
 
         foreach ($locales as $locale) {
@@ -133,7 +149,8 @@ class CategoryTableSeeder extends Seeder
                     'meta_keywords'    => trans('installer::app.seeders.sample-categories.category-translation.2.meta-keywords', [], $locale),
                     'locale_id'        => null,
                     'locale'           => $locale,
-                ], [
+                ],
+                [
                     'category_id'      => 3,
                     'name'             => trans('installer::app.seeders.sample-categories.category-translation.3.name', [], $locale),
                     'slug'             => trans('installer::app.seeders.sample-categories.category-translation.3.slug', [], $locale),
@@ -156,6 +173,18 @@ class CategoryTableSeeder extends Seeder
                     'locale_id'        => null,
                     'locale'           => $locale,
                 ],
+                [
+                    'category_id'      => 4,
+                    'name'             => trans('installer::app.seeders.sample-categories.category-translation.4.name', [], $locale),
+                    'slug'             => trans('installer::app.seeders.sample-categories.category-translation.4.slug', [], $locale),
+                    'url_path'         => '',
+                    'description'      => trans('installer::app.seeders.sample-categories.category-translation.4.description', [], $locale),
+                    'meta_title'       => trans('installer::app.seeders.sample-categories.category-translation.4.meta-title', [], $locale),
+                    'meta_description' => trans('installer::app.seeders.sample-categories.category-translation.4.meta-description', [], $locale),
+                    'meta_keywords'    => trans('installer::app.seeders.sample-categories.category-translation.4.meta-keywords', [], $locale),
+                    'locale_id'        => null,
+                    'locale'           => $locale,
+                ],
             ]);
         }
 
@@ -163,25 +192,32 @@ class CategoryTableSeeder extends Seeder
             [
                 'category_id'  => 2,
                 'attribute_id' => 11,
-            ], [
+            ],
+            [
                 'category_id'  => 2,
                 'attribute_id' => 23,
-            ], [
+            ],
+            [
                 'category_id'  => 2,
                 'attribute_id' => 24,
-            ], [
+            ],
+            [
                 'category_id'  => 2,
                 'attribute_id' => 25,
-            ], [
+            ],
+            [
                 'category_id'  => 3,
                 'attribute_id' => 11,
-            ], [
+            ],
+            [
                 'category_id'  => 3,
                 'attribute_id' => 23,
-            ], [
+            ],
+            [
                 'category_id'  => 3,
                 'attribute_id' => 24,
-            ], [
+            ],
+            [
                 'category_id'  => 3,
                 'attribute_id' => 25,
             ],[
