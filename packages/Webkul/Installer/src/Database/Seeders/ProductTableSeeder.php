@@ -1551,7 +1551,7 @@ class ProductTableSeeder extends Seeder
                     'locale'                => $locale,
                     'channel'               => 'default',
                     'attribute_family_id'   => 1,
-                    'product_id'            => 12,
+                    'product_id'            => 14,
                     'updated_at'            => $now,
                     'parent_id'             => 7,
                     'visible_individually'  => 1,
