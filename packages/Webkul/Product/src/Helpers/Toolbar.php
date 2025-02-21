@@ -64,7 +64,7 @@ class Toolbar
     public function getDefaultOrder(): array
     {
         return $this->getAvailableOrders()
-            ->where('value', core()->getConfigData('catalog.products.storefront.sort_by') ?? 'price-desc')
+            ->where('value', core()->getConfigData('catalog.products.storefront.sort_by') ?? 'created_at-desc')
             ->firstOrFail();
     }
 
