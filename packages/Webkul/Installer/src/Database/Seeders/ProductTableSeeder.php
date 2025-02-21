@@ -1047,7 +1047,7 @@ class ProductTableSeeder extends Seeder
                 'position'   => 1,
             ], 
             [
-                'id'         => 19,
+                'id'         => 20,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/14', '13.webp'),
                 'product_id' => 13,
