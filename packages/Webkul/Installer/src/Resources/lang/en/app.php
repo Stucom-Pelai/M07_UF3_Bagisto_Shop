@@ -381,13 +381,21 @@ return [
                 ],
 
                 '3' => [
-                    'description'      => 'Winter Wear Category Description',
+                    'description'      => 'Wter Winear Category Description',
                     'meta-description' => 'Winter Wear Category Meta Description',
                     'meta-keywords'    => 'Winter Wear Category Meta Keywords',
                     'meta-title'       => 'Winter Wear Category Meta Title',
                     'name'             => 'Winter Wear',
                     'slug'             => 'winter-wear',
                 ],
+                '4' => [
+                    'description'      => 'Summer Wear Category Description',
+                    'meta-description' => 'Summer Wear Category Meta Description',
+                    'meta-keywords'    => 'Summer Wear Category Meta Keywords',
+                    'meta-title'       => 'Summer Wear Category Meta Title',
+                    'name'             => 'Summer Wear',
+                    'slug'             => 'Summer-wear',
+=======
                 '5' => [
                     'description'      => 'Woman Category Description',
                     'meta-description' => 'Woman Category Meta Description',
