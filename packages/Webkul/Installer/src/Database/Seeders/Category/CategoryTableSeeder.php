@@ -106,6 +106,19 @@ class CategoryTableSeeder extends Seeder
                 'created_at'    => $now,
                 'updated_at'    => $now,
 
+            ],[
+                'id'            => 5,
+                'position'      => 1,
+                'logo_path'     => null,
+                'status'        => 1,
+                'display_mode'  => 'products_and_description',
+                '_lft'          => 1,
+                '_rgt'          => 1,
+                'parent_id'     => 1,
+                'additional'    => null,
+                'banner_path'   => null,
+                'created_at'    => $now,
+                'updated_at'    => $now,
             ],
             [
                 'id'            => 4,
@@ -146,6 +159,17 @@ class CategoryTableSeeder extends Seeder
                     'meta_title'       => trans('installer::app.seeders.sample-categories.category-translation.3.meta-title', [], $locale),
                     'meta_description' => trans('installer::app.seeders.sample-categories.category-translation.3.meta-description', [], $locale),
                     'meta_keywords'    => trans('installer::app.seeders.sample-categories.category-translation.3.meta-keywords', [], $locale),
+                    'locale_id'        => null,
+                    'locale'           => $locale,
+                ],[
+                    'category_id'      => 5,
+                    'name'             => trans('installer::app.seeders.sample-categories.category-translation.5.name', [], $locale),
+                    'slug'             => trans('installer::app.seeders.sample-categories.category-translation.5.slug', [], $locale),
+                    'url_path'         => '',
+                    'description'      => trans('installer::app.seeders.sample-categories.category-translation.5.description', [], $locale),
+                    'meta_title'       => trans('installer::app.seeders.sample-categories.category-translation.5.meta-title', [], $locale),
+                    'meta_description' => trans('installer::app.seeders.sample-categories.category-translation.5.meta-description', [], $locale),
+                    'meta_keywords'    => trans('installer::app.seeders.sample-categories.category-translation.5.meta-keywords', [], $locale),
                     'locale_id'        => null,
                     'locale'           => $locale,
                 ],
@@ -195,6 +219,18 @@ class CategoryTableSeeder extends Seeder
             ],
             [
                 'category_id'  => 3,
+                'attribute_id' => 25,
+            ],[
+                'category_id'  => 5,
+                'attribute_id' => 11,
+            ], [
+                'category_id'  => 5,
+                'attribute_id' => 23,
+            ], [
+                'category_id'  => 5,
+                'attribute_id' => 24,
+            ], [
+                'category_id'  => 5,
                 'attribute_id' => 25,
             ],
         ]);
