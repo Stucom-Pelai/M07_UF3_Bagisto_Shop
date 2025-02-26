@@ -58,7 +58,8 @@ return [
                 'white'  => 'White',
                 'xl'     => 'XL',
                 'yellow' => 'Yellow',
-                'xxl'    => 'XXL'
+                'xxl'    => 'XXL',
+                'blue' => 'Blue',
             ],
         ],
 
