@@ -128,7 +128,7 @@
                     rules="required|phone"
                     :value="old('phone') ?? $customer->phone"
                     :label="trans('shop::app.customers.account.profile.edit.phone')"
-                    :placeholder="trans('shop::app.customers.account.profile.edit.phone')"
+                    :placeholder="123456789"
                 />
 
                 <x-shop::form.control-group.error control-name="phone" />
