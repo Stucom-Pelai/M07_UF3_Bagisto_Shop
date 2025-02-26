@@ -241,9 +241,9 @@
                         type="text"
                         ::name="controlName + '.postcode'"
                         ::value="address.postcode"
-                        rules="{{ core()->isPostCodeRequired() ? 'required' : '' }}"
+                        rules="{{ core()->isPostCodeRequired() ? 'required|digits:5' : 'digits:5' }}"
                         :label="trans('shop::app.checkout.onepage.address.postcode')"
-                        :placeholder="trans('shop::app.checkout.onepage.address.postcode')"
+                        placeholder="12345"
                     />
 
                     <x-shop::form.control-group.error ::name="controlName + '.postcode'" />
