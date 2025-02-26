@@ -405,6 +405,22 @@ return [
                     'name'             => 'Women',
                     'slug'             => 'women',
                 ],
+                '6' => [
+                    'description'      => 'Winter Wear Category Description',
+                    'meta-description' => 'Winter Wear Category Meta Description',
+                    'meta-keywords'    => 'Winter Wear Category Meta Keywords',
+                    'meta-title'       => 'Winter Wear Category Meta Title',
+                    'name'             => 'Winter Wear',
+                    'slug'             => 'winter Wear',
+                ],
+                '7' => [
+                    'description'      => 'Summer Wear Category Description',
+                    'meta-description' => 'Summer Wear Category Meta Description',
+                    'meta-keywords'    => 'Summer Wear Category Meta Keywords',
+                    'meta-title'       => 'Summer Wear Category Meta Title',
+                    'name'             => 'Summer Wear',
+                    'slug'             => 'Summer-wear',
+                ],
             ],
         ],
 
