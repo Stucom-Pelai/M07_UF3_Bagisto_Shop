@@ -140,7 +140,7 @@ export default {
                     ...en,
                     messages: {
                         ...en.messages,
-                        phone: "This {field} must be a valid phone number",
+                        phone: "This {field} must be a valid phone number{9 digits}",
                     },
                 },
         
