@@ -476,6 +476,7 @@
                     getCart() {
                         this.$axios.get('{{ route('shop.api.checkout.cart.index') }}')
                             .then(response => {
+                                console.log(response.data.data);
                                 this.cart = response.data.data;
 
                                 this.isLoading = false;
@@ -484,7 +485,9 @@
                                     this.$emitter.emit('add-flash', { type: 'info', message: response.data.message });
                                 }
                             })
-                            .catch(error => {});
+                            .catch(error => {
+                                console.error(error);
+                            });
                     },
 
                     setCart(cart) {
