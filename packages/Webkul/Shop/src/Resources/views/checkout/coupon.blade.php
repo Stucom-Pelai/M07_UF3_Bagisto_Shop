@@ -53,12 +53,15 @@
                             <x-slot:content class="!px-4">
                                 <x-shop::form.control-group class="!mb-0">
                                     <x-shop::form.control-group.control
-                                        type="text"
-                                        class="px-6 py-4 max-md:!mb-0 max-md:!p-3 max-sm:!p-2"
-                                        name="code"
-                                        rules="required"
-                                        :placeholder="trans('shop::app.checkout.coupon.enter-your-code')"
-                                    />
+                                    type="text"
+                                    class="px-6 py-4 max-md:!mb-0 max-md:!p-3 max-sm:!p-2"
+                                    name="code"
+                                    rules="required"
+                                    placeholder="Welcome!"
+                                    pattern="^.{8}$" 
+                                    title="Debe contener exactamente 8 caracteres" 
+                                />
+                                
 
                                     <x-shop::form.control-group.error
                                         class="flex"
