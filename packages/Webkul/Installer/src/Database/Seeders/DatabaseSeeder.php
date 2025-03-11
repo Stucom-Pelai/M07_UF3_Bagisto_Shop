@@ -3,6 +3,7 @@
 namespace Webkul\Installer\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Webkul\CartRule\Database\Seeders\DatabaseSeeder as CartRuleSeeder;
 use Webkul\Installer\Database\Seeders\Attribute\DatabaseSeeder as AttributeSeeder;
 use Webkul\Installer\Database\Seeders\Category\DatabaseSeeder as CategorySeeder;
 use Webkul\Installer\Database\Seeders\CMS\DatabaseSeeder as CMSSeeder;
@@ -32,5 +33,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SocialLoginSeeder::class, false, ['parameters' => $parameters]);
         $this->call(ShopSeeder::class, false, ['parameters' => $parameters]);
         $this->call(UserSeeder::class, false, ['parameters' => $parameters]);
+        $this->call(CartRuleSeeder::class,false,['parameters' => $parameters]);
     }
 }
