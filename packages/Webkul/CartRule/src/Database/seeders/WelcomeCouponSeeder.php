@@ -31,14 +31,11 @@ class WelcomeCouponSeeder extends Seeder
             'coupon_type' => 1,
             // 'coupon_code' => 'WELCOME!',
             'use_auto_generation' => 0,
-            'usage_per_customer' => 1000,
+            'usage_per_customer' => 1,
             'uses_per_coupon' => 0, 
             'times_used' => 0,
             'condition_type' => 1,
-            'conditions' => json_encode([
-                'all_conditions' => [],
-                'any_conditions' => []
-            ]),
+            'conditions' => "[]",
             'end_other_rules' => 0,
             'uses_attribute_conditions' => 0,
             'action_type' => 'by_percent',  
@@ -57,7 +54,8 @@ class WelcomeCouponSeeder extends Seeder
             'cart_rule_id' => $cartRuleId,
             'code' => 'WELCOME!',
             'type' => 0, 
-            'usage_per_customer' => 1000,
+            'usage_per_customer' => 1,
+            'times_used' => 0,
             'is_primary' => 1,
             'created_at' => $now,
             'updated_at' => $now,
@@ -79,5 +77,13 @@ foreach ($customerGroups as $customerGroupId) {
     ]);
 }
 
+$customerIds = DB::table('customers')->pluck('id');
+foreach ($customerIds as $customerId) {
+    DB::table('cart_rule_customers')->insert([
+        'cart_rule_id' => $cartRuleId,
+        'customer_id'  => $customerId,
+        'times_used'   => 0, // Inicialmente, ningún cliente ha usado el cupón
+    ]);
+}
     }
 }
