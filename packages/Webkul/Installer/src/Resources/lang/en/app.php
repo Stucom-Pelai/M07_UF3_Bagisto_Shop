@@ -319,7 +319,7 @@ return [
 
                 'offer-information' => [
                     'content' => [
-                        'title' => 'Get UPTO 40% OFF on your 1st order SHOP NOW',
+                        'title' => 'Get UPTO 30% OFF on your 1st order SHOP NOW',
                     ],
 
                     'name' => 'Offer Information',

@@ -69,7 +69,7 @@ return [
                 'name'    => 'title',
                 'title'   => 'admin::app.configuration.index.general.content.header-offer.offer-title',
                 'type'    => 'text',
-                'default' => 'Get UPTO 40% OFF on your 1st order',
+                'default' => 'Get UPTO 30% OFF on your 1st order',
             ], [
                 'name'    => 'redirection_title',
                 'title'   => 'admin::app.configuration.index.general.content.header-offer.redirection-title',
