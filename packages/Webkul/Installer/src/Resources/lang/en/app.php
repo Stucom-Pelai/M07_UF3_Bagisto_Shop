@@ -345,7 +345,7 @@ return [
 
                 'top-collections' => [
                     'content' => [
-                        'sub-title-1' => 'Our Collections',
+                        'sub-title-1' => 'Winter collection for him',
                         'sub-title-2' => 'Our Collections',
                         'sub-title-3' => 'Our Collections',
                         'sub-title-4' => 'Our Collections',
