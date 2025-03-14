@@ -411,7 +411,7 @@ return [
                     'meta-keywords'    => 'Winter Wear Category Meta Keywords',
                     'meta-title'       => 'Winter Wear Category Meta Title',
                     'name'             => 'Winter Wear',
-                    'slug'             => 'winter Wear',
+                    'slug'             => 'women-winter-wear',
                 ],
                 '7' => [
                     'description'      => 'Summer Wear Category Description',
@@ -419,7 +419,7 @@ return [
                     'meta-keywords'    => 'Summer Wear Category Meta Keywords',
                     'meta-title'       => 'Summer Wear Category Meta Title',
                     'name'             => 'Summer Wear',
-                    'slug'             => 'Summer-wear',
+                    'slug'             => 'women-summer-wear',
                 ],
             ],
         ],
