@@ -260,7 +260,10 @@ class ProductTableSeeder extends Seeder
             [
                 'product_id'   => 7,
                 'attribute_id' => 24,
-            ],
+            ], [
+                'product_id'   => 4,
+                'attribute_id' => 24,
+            ]
         ]);
 
         DB::table('product_price_indices')->insert([
@@ -1265,6 +1268,7 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
+                    'size'                 => 6,
                 ],
                 [
                     'sku'                  => 'SP-004',
