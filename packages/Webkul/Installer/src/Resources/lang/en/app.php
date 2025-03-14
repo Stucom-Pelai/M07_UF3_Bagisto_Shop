@@ -369,6 +369,32 @@ return [
                 'name' => 'Example',
             ],
         ],
+        'tax' => [
+            'identifiers' => [
+                'super_Reduced_IVA'  => 'Super Reduced IVA',
+                'reduced_IVA'        => 'Reduced IVA',
+                'general_IVA'        => 'General IVA',
+            ],
+        ],
+
+        'tax_categories' => [
+            'codes' => [
+                'code_1'  => 'code_1',
+                'code_2'        => 'code_2',
+                'code_3'        => 'code_3',
+            ],
+            'names' => [
+                'tech_cat'  => 'Technology',
+                'cloth_cat'        => 'Clothing',
+                'books_cat'        => 'Books',
+            ],
+            'descriptions' => [
+                'tech_desc'  => 'Technology description',
+                'cloth_desc'        => 'Clothing description',
+                'books_desc'        => 'Books description',
+            ],
+            
+        ],
 
         'sample-categories' => [
             'category-translation' => [
