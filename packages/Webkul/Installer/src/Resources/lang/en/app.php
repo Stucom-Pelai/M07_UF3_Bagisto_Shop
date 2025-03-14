@@ -450,7 +450,7 @@ return [
                     'meta-keywords'     => 'meta1, meta2, meta3',
                     'meta-title'        => 'Meta Title',
                     'name'              => 'Arctic Touchscreen Winter Gloves',
-                    'short-description' => 'Stay connected and warm with our Arctic Touchscreen Winter Gloves. These gloves are not only crafted from high-quality acrylic for warmth and durability but also feature a touchscreen-compatible design. With an insulated lining, elastic cuffs for a secure fit, and a stylish look, these gloves are perfect for daily wear in chilly conditions.',
+                    'short-description' => 'Stay connected and warm with our Arctic Touchscreen Gloves. These gloves are not only crafted from high-quality acrylic for warmth and durability but also feature a touchscreen-compatible design. With an insulated lining, elastic cuffs for a secure fit, and a stylish look, these gloves are perfect for daily wear in chilly conditions.',
                 ],
 
                 '4' => [
@@ -568,7 +568,7 @@ return [
                     'meta-keywords'    => 'meta1, meta2, meta3',
                     'meta-title'       => 'Meta Title',
                     'name'             => 'Arctic Touchscreen Winter Gloves',
-                    'sort-description' => 'Stay connected and warm with our Arctic Touchscreen Winter Gloves. These gloves are not only crafted from high-quality acrylic for warmth and durability but also feature a touchscreen-compatible design. With an insulated lining, elastic cuffs for a secure fit, and a stylish look, these gloves are perfect for daily wear in chilly conditions.',
+                    'sort-description' => 'Stay connected and warm with our Arctic Touchscreen Gloves. These gloves are not only crafted from high-quality acrylic for warmth and durability but also feature a touchscreen-compatible design. With an insulated lining, elastic cuffs for a secure fit, and a stylish look, these gloves are perfect for daily wear in chilly conditions.',
                 ],
 
                 '4' => [
