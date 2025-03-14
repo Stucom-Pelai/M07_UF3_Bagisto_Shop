@@ -395,7 +395,7 @@ return [
                     'meta-keywords'    => 'Summer Wear Category Meta Keywords',
                     'meta-title'       => 'Summer Wear Category Meta Title',
                     'name'             => 'Summer Wear',
-                    'slug'             => 'Summer-wear',
+                    'slug'             => 'summer-wear',
                 ],
                 '5' => [
                     'description'      => 'Women Category Description',
