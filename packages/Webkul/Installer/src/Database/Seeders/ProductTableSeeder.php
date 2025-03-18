@@ -75,7 +75,7 @@ class ProductTableSeeder extends Seeder
 
         foreach ($localeProductsData as $locale => $productsData) {
             $productsFlatData = Arr::map($localeProductsData[$locale], function ($row) {
-                return Arr::except($row, ['color', 'size', 'parent_id']);
+                return Arr::except($row, ['color', 'size', 'parent_id', 'tax_category_id']);
             });
 
             DB::table('product_flat')->insert($productsFlatData);
@@ -903,10 +903,11 @@ class ProductTableSeeder extends Seeder
             [
                 'product_id'  => 9,
                 'category_id' => 3,
-            ],[
+            ],
+            [
                 'product_id'  => 12,
                 'category_id' => 3,
-            ], 
+            ],
             [
                 'product_id'  => 14,
                 'category_id' => 3,
@@ -934,14 +935,15 @@ class ProductTableSeeder extends Seeder
                 'path'       => $this->productImages('product/13', '14.webp'),
                 'product_id' => 3,
                 'position'   => 1,
-            ], 
+            ],
             [
                 'id'         => 19,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/3', '3.webp'),
                 'product_id' => 13,
                 'position'   => 1,
-            ], [
+            ],
+            [
                 'id'         => 4,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/4', '4.webp'),
@@ -1039,13 +1041,13 @@ class ProductTableSeeder extends Seeder
                 'product_id' => 11,
                 'position'   => 2,
             ], //Nuevo producto abajo
-              [
+            [
                 'id'         => 18,
                 'type'       => 'image',
                 'path'       => $this->productImages('product/12', 'jacketYellow.webp'),
                 'product_id' => 12,
                 'position'   => 1,
-            ], 
+            ],
             [
                 'id'         => 20,
                 'type'       => 'image',
@@ -1208,7 +1210,8 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
-                ],                [
+                ],
+                [
                     'sku'                   => 'SP-003',
                     'type'                  => 'simple',
                     'product_number'        => null,
@@ -1237,7 +1240,7 @@ class ProductTableSeeder extends Seeder
                     'visible_individually'  => 1,
                     'color'                 => 2,
                     'size'                  => 0,
-                ], 
+                ],
                 [
                     'sku'                  => 'SP-012',
                     'type'                 => 'simple',
@@ -1265,6 +1268,7 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
+                    'tax_category_id'      => 1,
                 ],
                 [
                     'sku'                  => 'SP-004',
