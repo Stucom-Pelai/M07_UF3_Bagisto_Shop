@@ -566,6 +566,14 @@ return [
                     'meta-title'        => 'Meta Title',
                     'name'              => 'OmniHeat Men\'s Solid Hooded Puffer Jacket-Grey-L',
                     'short-description' => 'Stay warm and stylish with our OmniHeat Men\'s Solid Hooded Puffer Jacket. This jacket is designed to provide ultimate warmth and features insert pockets for added convenience. The insulated material ensures you stay cozy in cold weather. Available in 5 attractive colors, making it a versatile choice for various occasions.'
+                ],
+                '15' => [
+                    'description'       => 'Banador fresquito.',
+                    'meta-description'  => 'meta description',
+                    'meta-keywords'     => 'meta1, meta2, meta3',
+                    'meta-title'        => 'Meta Title',
+                    'name'              => 'Banador rojo para el verano - M',
+                    'short-description' => 'Banador rojo para el verano, muy fresquito y comodo, sin malla.'
                 ]
             ],
 
@@ -575,7 +583,7 @@ return [
                     'meta-description' => 'meta description',
                     'meta-keywords'    => 'meta1, meta2, meta3',
                     'meta-title'       => 'Meta Title',
-                    'name'             => 'Arctic Cozy Knit Unisex Beanie',
+                    'name'             => 'Xavier mascota',
                     'sort-description' => 'Embrace the chilly days in style with our Arctic Cozy Knit Beanie. Crafted from a soft and durable blend of acrylic, this classic beanie offers warmth and versatility. Suitable for both men and women, it\'s the ideal accessory for casual or outdoor wear. Elevate your winter wardrobe or gift someone special with this essential beanie cap.',
                 ],
 

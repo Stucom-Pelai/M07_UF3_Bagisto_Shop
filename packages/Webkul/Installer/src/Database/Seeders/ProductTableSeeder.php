@@ -260,7 +260,8 @@ class ProductTableSeeder extends Seeder
             [
                 'product_id'   => 7,
                 'attribute_id' => 24,
-            ], [
+            ],
+            [
                 'product_id'   => 4,
                 'attribute_id' => 24,
             ]
@@ -792,6 +793,13 @@ class ProductTableSeeder extends Seeder
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
             ],
+            [
+                'id'                   => 9,
+                'product_id'           => 15,
+                'vendor_id'            => 0,
+                'inventory_source_id'  => 1,
+                'qty'                  => 99,
+            ],
         ]);
 
         DB::table('product_inventory_indices')->insert([
@@ -867,6 +875,14 @@ class ProductTableSeeder extends Seeder
                 'created_at'           => $now,
                 'updated_at'           => $now,
             ],
+            [
+                'id'                   => 10,
+                'qty'                  => 99,
+                'product_id'           => 15,
+                'channel_id'           => 1,
+                'created_at'           => $now,
+                'updated_at'           => $now,
+            ],
         ]);
 
         // Product Categories
@@ -916,6 +932,10 @@ class ProductTableSeeder extends Seeder
             ],[
                 'product_id'  => 14,
                 'category_id' => 3,
+            ],
+            [
+                'product_id'  => 15,
+                'category_id' => 4,
             ],
         ]);
 
@@ -1058,6 +1078,13 @@ class ProductTableSeeder extends Seeder
                 'type'       => 'image',
                 'path'       => $this->productImages('product/14', '13.webp'),
                 'product_id' => 3,
+                'position'   => 1,
+            ],
+            [
+                'id'         => 21,
+                'type'       => 'image',
+                'path'       => $this->productImages('product/15', '15.webp'),
+                'product_id' => 15,
                 'position'   => 1,
             ],
         ]);
@@ -1568,7 +1595,36 @@ class ProductTableSeeder extends Seeder
                     'visible_individually'  => 1,
                     'color'                 => 3,
                     'size'                  => 8,
-                ]
+                ],
+                [
+                    'sku'                  => 'SP-015',
+                    'type'                 => 'simple',
+                    'product_number'       => null,
+                    'name'                 => trans('installer::app.seeders.sample-products.product-flat.15.name', [], $locale),
+                    'short_description'    => trans('installer::app.seeders.sample-products.product-flat.15.short-description', [], $locale),
+                    'description'          => trans('installer::app.seeders.sample-products.product-flat.15.description', [], $locale),
+                    'url_key'              => 'producto-hecho-por-xavier',
+                    'new'                  => 1,
+                    'featured'             => 1,
+                    'status'               => 1,
+                    'meta_title'           => trans('installer::app.seeders.sample-products.product-flat.15.meta-title', [], $locale),
+                    'meta_keywords'        => trans('installer::app.seeders.sample-products.product-flat.15.meta-keywords', [], $locale),
+                    'meta_description'     => trans('installer::app.seeders.sample-products.product-flat.15.meta-description', [], $locale),
+                    'price'                => 999,
+                    'special_price'        => 1,
+                    'special_price_from'   => null,
+                    'special_price_to'     => null,
+                    'weight'               => 70,
+                    'created_at'           => $now,
+                    'locale'               => $locale,
+                    'channel'              => 'default',
+                    'attribute_family_id'  => 1,
+                    'product_id'           => 15,
+                    'updated_at'           => $now,
+                    'parent_id'            => null,
+                    'visible_individually' => 1,
+                    'tax_category_id'      => 3,
+                ],
             ];
         }
 
