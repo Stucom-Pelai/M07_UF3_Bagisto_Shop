@@ -906,8 +906,10 @@ class ProductTableSeeder extends Seeder
             ],[
                 'product_id'  => 12,
                 'category_id' => 3,
-            ], 
-            [
+            ],[
+                'product_id'  => 13,
+                'category_id' => 3,
+            ],[
                 'product_id'  => 14,
                 'category_id' => 3,
             ],
