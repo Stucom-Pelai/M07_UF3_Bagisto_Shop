@@ -1273,8 +1273,8 @@ class ProductTableSeeder extends Seeder
                     'updated_at'           => $now,
                     'parent_id'            => null,
                     'visible_individually' => 1,
-                    'tax_category_id'      => 1,
                     'size'                 => 6,
+                    'tax_category_id'      => 1,
                 ],
                 [
                     'sku'                  => 'SP-004',
