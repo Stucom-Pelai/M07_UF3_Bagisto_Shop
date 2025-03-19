@@ -345,7 +345,7 @@ return [
 
                 'top-collections' => [
                     'content' => [
-                        'sub-title-1' => 'Our Collections',
+                        'sub-title-1' => 'Winter collection for him',
                         'sub-title-2' => 'Our Collections',
                         'sub-title-3' => 'Our Collections',
                         'sub-title-4' => 'Our Collections',
@@ -368,6 +368,32 @@ return [
             'users' => [
                 'name' => 'Example',
             ],
+        ],
+        'tax' => [
+            'identifiers' => [
+                'super_Reduced_IVA'  => 'Super Reduced IVA',
+                'reduced_IVA'        => 'Reduced IVA',
+                'general_IVA'        => 'General IVA',
+            ],
+        ],
+
+        'tax_categories' => [
+            'codes' => [
+                'code_1'  => 'code_1',
+                'code_2'        => 'code_2',
+                'code_3'        => 'code_3',
+            ],
+            'names' => [
+                'tech_cat'  => 'Technology',
+                'cloth_cat'        => 'Clothing',
+                'books_cat'        => 'Books',
+            ],
+            'descriptions' => [
+                'tech_desc'  => 'Technology description',
+                'cloth_desc'        => 'Clothing description',
+                'books_desc'        => 'Books description',
+            ],
+            
         ],
 
         'sample-categories' => [
@@ -395,7 +421,7 @@ return [
                     'meta-keywords'    => 'Summer Wear Category Meta Keywords',
                     'meta-title'       => 'Summer Wear Category Meta Title',
                     'name'             => 'Summer Wear',
-                    'slug'             => 'Summer-wear',
+                    'slug'             => 'summer-wear',
                 ],
                 '5' => [
                     'description'      => 'Women Category Description',
@@ -411,7 +437,7 @@ return [
                     'meta-keywords'    => 'Winter Wear Category Meta Keywords',
                     'meta-title'       => 'Winter Wear Category Meta Title',
                     'name'             => 'Winter Wear',
-                    'slug'             => 'winter Wear',
+                    'slug'             => 'women-winter-wear',
                 ],
                 '7' => [
                     'description'      => 'Summer Wear Category Description',
@@ -419,7 +445,7 @@ return [
                     'meta-keywords'    => 'Summer Wear Category Meta Keywords',
                     'meta-title'       => 'Summer Wear Category Meta Title',
                     'name'             => 'Summer Wear',
-                    'slug'             => 'Summer-wear',
+                    'slug'             => 'women-summer-wear',
                 ],
             ],
         ],
@@ -450,7 +476,7 @@ return [
                     'meta-keywords'     => 'meta1, meta2, meta3',
                     'meta-title'        => 'Meta Title',
                     'name'              => 'Arctic Touchscreen Winter Gloves',
-                    'short-description' => 'Stay connected and warm with our Arctic Touchscreen Winter Gloves. These gloves are not only crafted from high-quality acrylic for warmth and durability but also feature a touchscreen-compatible design. With an insulated lining, elastic cuffs for a secure fit, and a stylish look, these gloves are perfect for daily wear in chilly conditions.',
+                    'short-description' => 'Stay connected and warm with our Arctic Touchscreen Gloves. These gloves are not only crafted from high-quality acrylic for warmth and durability but also feature a touchscreen-compatible design. With an insulated lining, elastic cuffs for a secure fit, and a stylish look, these gloves are perfect for daily wear in chilly conditions.',
                 ],
 
                 '4' => [
@@ -568,7 +594,7 @@ return [
                     'meta-keywords'    => 'meta1, meta2, meta3',
                     'meta-title'       => 'Meta Title',
                     'name'             => 'Arctic Touchscreen Winter Gloves',
-                    'sort-description' => 'Stay connected and warm with our Arctic Touchscreen Winter Gloves. These gloves are not only crafted from high-quality acrylic for warmth and durability but also feature a touchscreen-compatible design. With an insulated lining, elastic cuffs for a secure fit, and a stylish look, these gloves are perfect for daily wear in chilly conditions.',
+                    'sort-description' => 'Stay connected and warm with our Arctic Touchscreen Gloves. These gloves are not only crafted from high-quality acrylic for warmth and durability but also feature a touchscreen-compatible design. With an insulated lining, elastic cuffs for a secure fit, and a stylish look, these gloves are perfect for daily wear in chilly conditions.',
                 ],
 
                 '4' => [
