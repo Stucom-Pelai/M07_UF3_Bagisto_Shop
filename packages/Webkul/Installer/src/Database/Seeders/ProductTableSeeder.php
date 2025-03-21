@@ -800,6 +800,13 @@ class ProductTableSeeder extends Seeder
                 'inventory_source_id'  => 1,
                 'qty'                  => 99,
             ],
+            [
+                'id'                   => 10,
+                'product_id'           => 12,
+                'vendor_id'            => 0,
+                'inventory_source_id'  => 1,
+                'qty'                  => 10,
+            ],
         ]);
 
         DB::table('product_inventory_indices')->insert([
@@ -879,6 +886,14 @@ class ProductTableSeeder extends Seeder
                 'id'                   => 10,
                 'qty'                  => 99,
                 'product_id'           => 15,
+                'channel_id'           => 1,
+                'created_at'           => $now,
+                'updated_at'           => $now,
+            ],
+            [
+                'id'                   => 11,
+                'qty'                  => 10,
+                'product_id'           => 12,
                 'channel_id'           => 1,
                 'created_at'           => $now,
                 'updated_at'           => $now,
