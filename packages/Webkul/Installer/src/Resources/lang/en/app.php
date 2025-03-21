@@ -393,7 +393,7 @@ return [
                 'cloth_desc'        => 'Clothing description',
                 'books_desc'        => 'Books description',
             ],
-            
+
         ],
 
         'sample-categories' => [
@@ -566,6 +566,15 @@ return [
                     'meta-title'        => 'Meta Title',
                     'name'              => 'OmniHeat Men\'s Solid Hooded Puffer Jacket-Grey-L',
                     'short-description' => 'Stay warm and stylish with our OmniHeat Men\'s Solid Hooded Puffer Jacket. This jacket is designed to provide ultimate warmth and features insert pockets for added convenience. The insulated material ensures you stay cozy in cold weather. Available in 5 attractive colors, making it a versatile choice for various occasions.'
+                ],
+
+                '15' => [
+                    'description'       => 'Red Swimsuit ',
+                    'meta-description'  => 'meta description',
+                    'meta-keywords'     => 'meta1, meta2, meta3',
+                    'meta-title'        => 'Meta Title',
+                    'name'              => 'Red Swimsuit',
+                    'short-description' => 'Red Swimsuit for summer.'
                 ]
             ],
 
@@ -684,6 +693,14 @@ return [
                     'meta-title'       => 'Meta Title',
                     'name'             => 'OmniHeat Men\'s Solid Hooded Puffer Jacket-Grey-L',
                     'sort-description' => 'Stay warm and stylish with our OmniHeat Men\'s Solid Hooded Puffer Jacket. This jacket is designed to provide ultimate warmth and features insert pockets for added convenience. The insulated material ensures you stay cozy in cold weather. Available in 5 attractive colors, making it a versatile choice for various occasions.',
+                ],
+                '15' => [
+                    'description'       => 'Red Swimsuit ',
+                    'meta-description'  => 'meta description',
+                    'meta-keywords'     => 'meta1, meta2, meta3',
+                    'meta-title'        => 'Meta Title',
+                    'name'              => 'Red Swimsuit',
+                    'short-description' => 'Red Swimsuit for summer.'
                 ]
             ],
 
