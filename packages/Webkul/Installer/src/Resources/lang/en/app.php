@@ -408,7 +408,7 @@ return [
                 ],
 
                 '3' => [
-                    'description'      => 'Winter Winear Category Description',
+                    'description'      => 'Winter Wear Category Description',
                     'meta-description' => 'Winter Wear Category Meta Description',
                     'meta-keywords'    => 'Winter Wear Category Meta Keywords',
                     'meta-title'       => 'Winter Wear Category Meta Title',
