@@ -763,50 +763,66 @@ class ProductTableSeeder extends Seeder
                 'product_id'           => 4,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
-                'qty'                  => 100,
+                'qty'                  => 0,
             ],
+
             [
-                'id'                   => 5,
+                'id'                   => 8,
                 'product_id'           => 8,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
             ],
             [
-                'id'                   => 6,
+                'id'                   => 9,
                 'product_id'           => 9,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
             ],
             [
-                'id'                   => 7,
+                'id'                   => 10,
                 'product_id'           => 10,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
             ],
             [
-                'id'                   => 8,
+                'id'                   => 11,
                 'product_id'           => 11,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 100,
             ],
             [
-                'id'                   => 9,
-                'product_id'           => 15,
-                'vendor_id'            => 0,
-                'inventory_source_id'  => 1,
-                'qty'                  => 99,
-            ],
-            [
-                'id'                   => 10,
+                'id'                   => 12,
                 'product_id'           => 12,
                 'vendor_id'            => 0,
                 'inventory_source_id'  => 1,
                 'qty'                  => 10,
             ],
+            [
+                'id'                   => 13,
+                'product_id'           => 13,
+                'vendor_id'            => 0,
+                'inventory_source_id'  => 1,
+                'qty'                  => 0,
+            ],
+            [
+                'id'                   => 14,
+                'product_id'           => 14,
+                'vendor_id'            => 0,
+                'inventory_source_id'  => 1,
+                'qty'                  => 0,
+            ],
+            [
+                'id'                   => 15,
+                'product_id'           => 15,
+                'vendor_id'            => 0,
+                'inventory_source_id'  => 1,
+                'qty'                  => 99,
+            ],
+
         ]);
 
         DB::table('product_inventory_indices')->insert([
@@ -941,10 +957,12 @@ class ProductTableSeeder extends Seeder
             [
                 'product_id'  => 12,
                 'category_id' => 3,
-            ],[
+            ],
+            [
                 'product_id'  => 13,
                 'category_id' => 3,
-            ],[
+            ],
+            [
                 'product_id'  => 14,
                 'category_id' => 3,
             ],
