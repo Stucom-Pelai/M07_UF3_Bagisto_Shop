@@ -2,7 +2,13 @@
 
 namespace Webkul\Product\Listeners;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Bus;
+use Illuminate\Support\Facades\Mail;
+use PharIo\Manifest\Email;
+use Webkul\Admin\Http\Resources\WishlistItemResource;
+use Webkul\Customer\Models\Customer;
+use Webkul\Customer\Models\Wishlist;
 use Webkul\Product\Helpers\Indexers\Flat as FlatIndexer;
 use Webkul\Product\Jobs\ElasticSearch\DeleteIndex as DeleteElasticSearchIndexJob;
 use Webkul\Product\Jobs\ElasticSearch\UpdateCreateIndex as UpdateCreateElasticSearchIndexJob;
@@ -11,6 +17,7 @@ use Webkul\Product\Jobs\UpdateCreatePriceIndex as UpdateCreatePriceIndexJob;
 use Webkul\Product\Repositories\ProductBundleOptionProductRepository;
 use Webkul\Product\Repositories\ProductGroupedProductRepository;
 use Webkul\Product\Repositories\ProductRepository;
+use Webkul\Shop\Http\Controllers\Customer\Account\WishlistController;
 
 class Product
 {
@@ -24,7 +31,8 @@ class Product
         protected ProductBundleOptionProductRepository $productBundleOptionProductRepository,
         protected ProductGroupedProductRepository $productGroupedProductRepository,
         protected FlatIndexer $flatIndexer
-    ) {}
+    ) {
+    }
 
     /**
      * Update or create product indices
@@ -49,6 +57,7 @@ class Product
      */
     public function afterUpdate($product)
     {
+
         $this->flatIndexer->refresh($product);
 
         $productIds = $this->getAllRelatedProductIds($product);
@@ -58,6 +67,17 @@ class Product
             new UpdateCreatePriceIndexJob($productIds),
             new UpdateCreateElasticSearchIndexJob($productIds),
         ])->dispatch();
+
+        $beforePrice = session("beforePrice");
+        $newPrice = $product['price'];
+
+        if ($newPrice < $beforePrice) {
+            $customerEmails = Customer::whereIn('id',Wishlist::where('product_id', $product['id'])->pluck('customer_id')
+            )->get(['email']);
+            foreach ($customerEmails as $key => $value) {
+                die($value["email"]);
+            }
+        }
     }
 
     /**
@@ -74,7 +94,7 @@ class Product
 
         $product = $this->productRepository->find($productId);
 
-        if (! $product) {
+        if (!$product) {
             return;
         }
 
