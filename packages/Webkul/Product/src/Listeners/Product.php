@@ -69,9 +69,8 @@ class Product
         ])->dispatch();
 
         $beforePrice = session("beforePrice");
-        $newPrice = $product['price'];
 
-        if ($newPrice < $beforePrice) {
+        if ($product['price'] < $beforePrice) {
             $customerEmails = Customer::whereIn('id',Wishlist::where('product_id', $product['id'])->pluck('customer_id')
             )->get(['email']);
             foreach ($customerEmails as $key => $value) {
