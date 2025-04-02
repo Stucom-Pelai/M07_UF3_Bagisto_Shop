@@ -3,6 +3,8 @@
 namespace Webkul\Shop\Http\Controllers;
 
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Http;
 use Webkul\Core\Repositories\SubscribersListRepository;
 
 class SubscriptionController extends Controller
@@ -21,13 +23,41 @@ class SubscriptionController extends Controller
      */
     public function store()
     {
-        $this->validate(request(), [
+        $validator = Validator::make(request()->all(), [
             'email' => 'email|required',
+            'g-recaptcha-response' => 'required',
         ]);
+
+        //ddd(request()->all());
+
+        if ($validator->fails()) {
+            session()->flash('error', trans('shop::app.subscription.invalid-recaptcha'));
+
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
         $email = request()->input('email');
 
         $subscription = $this->subscriptionRepository->findOneByField('email', $email);
+
+        $recaptcha_secret = config('services.recaptcha.secret');
+
+
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret'   => $recaptcha_secret,
+            'response' => request('g-recaptcha-response'),
+        ]);
+        
+
+
+        $recaptcha = $response->json();
+
+
+        if (! ($recaptcha['success'] ?? false)) {
+            session()->flash('error', trans('shop::app.subscription.invalid-recaptcha'));
+
+            return redirect()->back();
+        }
 
         if ($subscription) {
             session()->flash('error', trans('shop::app.subscription.already'));

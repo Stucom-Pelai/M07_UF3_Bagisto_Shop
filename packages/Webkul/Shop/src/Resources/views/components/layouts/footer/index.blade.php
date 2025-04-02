@@ -27,23 +27,23 @@
         <!-- For Desktop View -->
         <div class="flex flex-wrap items-start gap-24 max-1180:gap-6 max-1060:hidden">
             @if ($customization?->options)
-                    @foreach ($customization->options as $footerLinkSection)
-                            <ul class="grid gap-5 text-sm">
-                                @php
-                                    usort($footerLinkSection, function ($a, $b) {
-                                        return $a['sort_order'] - $b['sort_order'];
-                                    });
-                                @endphp
+                @foreach ($customization->options as $footerLinkSection)
+                    <ul class="grid gap-5 text-sm">
+                        @php
+                            usort($footerLinkSection, function ($a, $b) {
+                                return $a['sort_order'] - $b['sort_order'];
+                            });
+                        @endphp
 
-                                @foreach ($footerLinkSection as $link)
-                                    <li>
-                                        <a href="{{ $link['url'] }}">
-                                            {{ $link['title'] }}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                    @endforeach
+                        @foreach ($footerLinkSection as $link)
+                            <li>
+                                <a href="{{ $link['url'] }}">
+                                    {{ $link['title'] }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endforeach
             @endif
         </div>
 
@@ -53,29 +53,29 @@
             <x-slot:header
                 class="rounded-t-lg bg-[#F1EADF] font-medium max-md:p-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-sm">
                 @lang('shop::app.components.layouts.footer.footer-content')
-                </x-slot>
+            </x-slot>
 
-                <x-slot:content class="flex justify-between !bg-transparent !p-4">
-                    @if ($customization?->options)
-                                    @foreach ($customization->options as $footerLinkSection)
-                                                    <ul class="grid gap-5 text-sm">
-                                                        @php
-                                                            usort($footerLinkSection, function ($a, $b) {
-                                                                return $a['sort_order'] - $b['sort_order'];
-                                                            });
-                                                        @endphp
+            <x-slot:content class="flex justify-between !bg-transparent !p-4">
+                @if ($customization?->options)
+                    @foreach ($customization->options as $footerLinkSection)
+                        <ul class="grid gap-5 text-sm">
+                            @php
+                                usort($footerLinkSection, function ($a, $b) {
+                                    return $a['sort_order'] - $b['sort_order'];
+                                });
+                            @endphp
 
-                                                        @foreach ($footerLinkSection as $link)
-                                                            <li>
-                                                                <a href="{{ $link['url'] }}" class="text-sm font-medium max-sm:text-xs">
-                                                                    {{ $link['title'] }}
-                                                                </a>
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
-                                    @endforeach
-                    @endif
-                    </x-slot>
+                            @foreach ($footerLinkSection as $link)
+                                <li>
+                                    <a href="{{ $link['url'] }}" class="text-sm font-medium max-sm:text-xs">
+                                        {{ $link['title'] }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endforeach
+                @endif
+            </x-slot>
         </x-shop::accordion>
 
         {!! view_render_event('bagisto.shop.layout.footer.newsletter_subscription.before') !!}
@@ -95,20 +95,44 @@
                 <div>
                     <x-shop::form :action="route('shop.subscription.store')" class="mt-2.5 rounded max-sm:mt-0">
                         <div class="relative w-full">
-                            <x-shop::form.control-group.control type="email"
+                            <x-shop::form.control-group.control 
+                                type="email"
                                 class="block w-[420px] max-w-full rounded-xl border-2 border-[#e9decc] bg-[#F1EADF] px-5 py-4 text-base max-1060:w-full max-md:p-3.5 max-sm:mb-0 max-sm:rounded-lg max-sm:border-2 max-sm:p-2 max-sm:text-sm"
-                                name="email" rules="required|email" label="Email"
+                                name="email" 
+                                rules="required|email" 
+                                label="Email" 
                                 :aria-label="trans('shop::app.components.layouts.footer.email')"
-                                placeholder="email@example.com" />
-
+                                placeholder="email@example.com" 
+                            />
+                    
                             <x-shop::form.control-group.error control-name="email" />
-
+                    
+                            <!-- Contenedor vacío para el reCAPTCHA -->
+                            <div id="recaptcha-container" class="mt-3 flex justify-center"></div>
+                    
                             <button type="submit"
                                 class="absolute top-1.5 flex w-max items-center rounded-xl bg-white px-7 py-2.5 font-medium hover:bg-zinc-100 max-md:top-1 max-md:px-5 max-md:text-xs max-sm:mt-0 max-sm:rounded-lg max-sm:px-4 max-sm:py-2 ltr:right-2 rtl:left-2">
                                 @lang('shop::app.components.layouts.footer.subscribe')
                             </button>
                         </div>
+                    
+                        @push('scripts')
+                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    setTimeout(() => {
+                                        if (typeof grecaptcha !== "undefined") {
+                                            grecaptcha.render('recaptcha-container', {
+                                                'sitekey': '6LdW5AIrAAAAAJH9Ywrt7Gq6z9xdhscyYqDxglLK'
+                                            });
+                                        }
+                                    }, 500); // Reducimos el timeout a 500ms para que no tarde demasiado
+                                });
+                            </script>
+                        @endpush
                     </x-shop::form>
+                    
+                    
                 </div>
             </div>
         @endif
