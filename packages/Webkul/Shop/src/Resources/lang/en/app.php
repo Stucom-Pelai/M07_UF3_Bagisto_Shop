@@ -930,6 +930,7 @@ return [
         'already'             => 'You are already subscribed to our newsletter.',
         'subscribe-success'   => 'You have successfully subscribed to our newsletter.',
         'unsubscribe-success' => 'You have successfully unsubscribed to our newsletter.',
+        'invalid-recaptcha'           => 'Invalid reCAPTCHA.',
     ],
 
     'emails' => [
