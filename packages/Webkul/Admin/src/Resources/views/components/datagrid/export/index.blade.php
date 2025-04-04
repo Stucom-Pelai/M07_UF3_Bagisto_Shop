@@ -12,6 +12,12 @@
         id="v-datagrid-export-template"
     >
         <div>
+            <a
+                                href="{{ route('admin.sales.orders.print') }}"
+                                class="text-sm text-blue-600 transition-all hover:underline"
+                            >
+                                @lang('admin::app.sales.orders.view.download-pdf')
+                            </a>
             <x-admin::modal ref="exportModal">
                 <x-slot:toggle>
                     <button class="transparent-button hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800">
@@ -45,6 +51,10 @@
 
                                 <option value="xlsx">
                                     @lang('admin::app.export.xlsx')
+                                </option>
+
+                                <option value="pdf">
+                                    @lang('admin::app.export.pdf')
                                 </option>
                             </x-admin::form.control-group.control>
                         </x-admin::form.control-group>
@@ -100,7 +110,10 @@
                  * @param {object} data - Object containing available and applied properties.
                  * @returns {void}
                  */
-                updateProperties({ available, applied }) {
+                updateProperties({
+                    available,
+                    applied
+                }) {
                     this.available = available;
 
                     this.applied = applied;
@@ -112,8 +125,11 @@
                  * @returns {void}
                  */
                 download() {
-                    if (! this.available?.records?.length) {
-                        this.$emitter.emit('add-flash', { type: 'warning', message: '@lang('admin::app.export.no-records')' });
+                    if (!this.available?.records?.length) {
+                        this.$emitter.emit('add-flash', {
+                            type: 'warning',
+                            message: '@lang('admin::app.export.no-records')'
+                        });
 
                         this.$refs.exportModal.toggle();
                     } else {
@@ -151,7 +167,8 @@
                                  */
                                 const link = document.createElement('a');
                                 link.href = url;
-                                link.setAttribute('download', `${(Math.random() + 1).toString(36).substring(7)}.${this.format}`);
+                                link.setAttribute('download',
+                                    `${(Math.random() + 1).toString(36).substring(7)}.${this.format}`);
 
                                 /**
                                  * Adding a link to a document, clicking on the link, and then removing the link.

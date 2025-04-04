@@ -12,6 +12,7 @@ use Webkul\Admin\Http\Resources\AddressResource;
 use Webkul\Admin\Http\Resources\CartResource;
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Checkout\Repositories\CartRepository;
+use Webkul\Core\Traits\PDFHandler;
 use Webkul\Customer\Repositories\CustomerGroupRepository;
 use Webkul\Payment\Facades\Payment;
 use Webkul\Sales\Repositories\OrderCommentRepository;
@@ -20,6 +21,10 @@ use Webkul\Sales\Transformers\OrderResource;
 
 class OrderController extends Controller
 {
+
+    use PDFHandler;
+
+    
     /**
      * Create a new controller instance.
      *
@@ -259,5 +264,27 @@ class OrderController extends Controller
         if (! $cart->payment) {
             throw new \Exception(trans('admin::app.sales.orders.create.specify-payment-method'));
         }
+    }
+
+    /**
+     * Print and download the for the specified resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function printOrder()
+    {
+        // $order = $this->orderRepository->findOrFail($id);
+
+        return $this->downloadPDF(
+            view('admin::sales.orders.pdf')->render(),
+            // 'order-'.$order->created_at->format('d-m-Y')
+        );
+        
+        // $order = $this->orderRepository->findOrFail($id);
+
+        // return $this->downloadPDF(
+        //     view('admin::sales.orders.pdf', compact('orders'))->render(),
+        //     'order-'.$order->created_at->format('d-m-Y')
+        // );
     }
 }

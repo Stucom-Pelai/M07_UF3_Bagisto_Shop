@@ -4391,6 +4391,7 @@ return [
         'no-records' => 'Nothing to export',
         'xls'        => 'XLS',
         'xlsx'       => 'XLSX',
+        'pdf'        => 'PDF',
     ],
 
     'validations' => [
