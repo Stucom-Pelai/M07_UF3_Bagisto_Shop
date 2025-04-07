@@ -94,6 +94,11 @@ Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'
      */
     Route::controller(CustomerController::class)->prefix('customer')->group(function () {
         Route::post('login', 'login')->name('shop.api.customers.session.create');
+        Route::get('/', 'index');
+        Route::get('{id}', 'show');
+        Route::post('create', 'store');
+        Route::put('update/{id}', 'update');
+        Route::delete('delete/{id}', 'destroy');
     });
 
     Route::group(['middleware' => ['customer'], 'prefix' => 'customer'], function () {
