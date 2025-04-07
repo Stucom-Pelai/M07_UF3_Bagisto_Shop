@@ -239,7 +239,102 @@
     <div class="page">
         <!-- Header -->
         <div class="page-header">
-            <b>@lang('admin::app.sales.invoices.invoice-pdf.invoice')</b>
+            <b>@lang('admin::app.sales.orders.orders-pdf.orders')</b>
+        </div>
+
+        <div class="page-content">
+            <!-- Items -->
+            <div class="items">
+                <table class="{{ core()->getCurrentLocale()->direction }}">
+                    <thead>
+                        <tr>
+                            <th>
+                                Order ID
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Grand Total
+                            </th>
+
+                            <th>
+                                Pay Via
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+                        </tr>
+                    </thead>
+
+                    {{-- <tbody>
+                        
+                        @foreach ($order->items as $item)
+                            <tr>
+                                <td>
+                                    {{ $item->getTypeInstance()->getOrderedItem($item)->sku }}
+                                </td>
+
+                                <td>
+                                    {{ $item->name }}
+
+                                    @if (isset($item->additional['attributes']))
+                                        <div>
+                                            @foreach ($item->additional['attributes'] as $attribute)
+                                                <b>{{ $attribute['attribute_name'] }} :
+                                                </b>{{ $attribute['option_label'] }}</br>
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                </td>
+
+                                <td>
+                                    @if (core()->getConfigData('sales.taxes.sales.display_prices') == 'including_tax')
+                                        {!! core()->formatBasePrice($item->base_price_incl_tax, true) !!}
+                                    @elseif (core()->getConfigData('sales.taxes.sales.display_prices') == 'both')
+                                        {!! core()->formatBasePrice($item->base_price_incl_tax, true) !!}
+
+                                        <div class="small-text">
+                                            @lang('admin::app.sales.invoices.invoice-pdf.excl-tax')
+
+                                            <span>
+                                                {{ core()->formatPrice($item->base_price) }}
+                                            </span>
+                                        </div>
+                                    @else
+                                        {!! core()->formatBasePrice($item->base_price, true) !!}
+                                    @endif
+                                </td>
+
+                                <td>
+                                    {{ $item->qty }}
+                                </td>
+
+                                <td>
+                                    @if (core()->getConfigData('sales.taxes.sales.display_subtotal') == 'including_tax')
+                                        {!! core()->formatBasePrice($item->base_total_incl_tax, true) !!}
+                                    @elseif (core()->getConfigData('sales.taxes.sales.display_subtotal') == 'both')
+                                        {!! core()->formatBasePrice($item->base_total_incl_tax, true) !!}
+
+                                        <div class="small-text">
+                                            @lang('admin::app.sales.invoices.invoice-pdf.excl-tax')
+
+                                            <span>
+                                                {{ core()->formatPrice($item->base_total) }}
+                                            </span>
+                                        </div>
+                                    @else
+                                        {!! core()->formatBasePrice($item->base_total, true) !!}
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody> --}}
+                </table>
+            </div>
         </div>
     </div>
 </body>

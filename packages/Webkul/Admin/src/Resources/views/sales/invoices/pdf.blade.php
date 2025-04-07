@@ -248,6 +248,8 @@
                 <b>@lang('admin::app.sales.invoices.invoice-pdf.invoice')</b>
             </div>
 
+            @dd($invoice)
+
             <div class="page-content">
                 <!-- Invoice Information -->
                 <table class="{{ core()->getCurrentLocale()->direction }}">

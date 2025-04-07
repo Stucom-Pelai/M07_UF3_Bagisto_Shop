@@ -413,6 +413,10 @@ return [
                 'view'                           => 'View',
                 'write-your-comment'             => 'Write your comment',
             ],
+
+            'orders-pdf' => [
+                'orders'                          => 'Orders'
+            ],
         ],
 
         'shipments' => [
@@ -4390,8 +4394,7 @@ return [
         'export'     => 'Export',
         'no-records' => 'Nothing to export',
         'xls'        => 'XLS',
-        'xlsx'       => 'XLSX',
-        'pdf'        => 'PDF',
+        'xlsx'       => 'XLSX'
     ],
 
     'validations' => [

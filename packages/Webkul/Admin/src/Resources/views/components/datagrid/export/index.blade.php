@@ -11,13 +11,7 @@
         type="text/x-template"
         id="v-datagrid-export-template"
     >
-        <div>
-            <a
-                                href="{{ route('admin.sales.orders.print') }}"
-                                class="text-sm text-blue-600 transition-all hover:underline"
-                            >
-                                @lang('admin::app.sales.orders.view.download-pdf')
-                            </a>
+        <div class="flex">
             <x-admin::modal ref="exportModal">
                 <x-slot:toggle>
                     <button class="transparent-button hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800">
@@ -52,10 +46,6 @@
                                 <option value="xlsx">
                                     @lang('admin::app.export.xlsx')
                                 </option>
-
-                                <option value="pdf">
-                                    @lang('admin::app.export.pdf')
-                                </option>
                             </x-admin::form.control-group.control>
                         </x-admin::form.control-group>
                     </x-admin::form>
@@ -71,6 +61,14 @@
                     </button>
                 </x-slot>
             </x-admin::modal>
+            <!-- add if -->
+            <button class="primary-button hover:bg-blue-200 dark:text-white dark:hover:bg-blue-800">
+                <a
+                                    href="{{ route('admin.sales.orders.print') }}"
+                                >
+                                    @lang('admin::app.sales.orders.view.download-pdf')
+                                </a>
+                                </button>
         </div>
     </script>
 
