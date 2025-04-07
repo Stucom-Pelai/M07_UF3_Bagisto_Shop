@@ -257,82 +257,40 @@
                             </th>
 
                             <th>
-                                Grand Total
+                                Channel
                             </th>
 
                             <th>
-                                Pay Via
+                                Customer Email
                             </th>
 
                             <th>
-                                Customer
+                                Total Items
                             </th>
                         </tr>
                     </thead>
 
-                    {{-- <tbody>
-                        
-                        @foreach ($order->items as $item)
+                    <tbody>
+                        @foreach ($orders as $order)
                             <tr>
                                 <td>
-                                    {{ $item->getTypeInstance()->getOrderedItem($item)->sku }}
+                                    {{ $order->id }}
                                 </td>
-
                                 <td>
-                                    {{ $item->name }}
-
-                                    @if (isset($item->additional['attributes']))
-                                        <div>
-                                            @foreach ($item->additional['attributes'] as $attribute)
-                                                <b>{{ $attribute['attribute_name'] }} :
-                                                </b>{{ $attribute['option_label'] }}</br>
-                                            @endforeach
-                                        </div>
-                                    @endif
+                                    {{ $order->status }}
                                 </td>
-
                                 <td>
-                                    @if (core()->getConfigData('sales.taxes.sales.display_prices') == 'including_tax')
-                                        {!! core()->formatBasePrice($item->base_price_incl_tax, true) !!}
-                                    @elseif (core()->getConfigData('sales.taxes.sales.display_prices') == 'both')
-                                        {!! core()->formatBasePrice($item->base_price_incl_tax, true) !!}
-
-                                        <div class="small-text">
-                                            @lang('admin::app.sales.invoices.invoice-pdf.excl-tax')
-
-                                            <span>
-                                                {{ core()->formatPrice($item->base_price) }}
-                                            </span>
-                                        </div>
-                                    @else
-                                        {!! core()->formatBasePrice($item->base_price, true) !!}
-                                    @endif
+                                    {{ $order->channel_name }}
                                 </td>
-
                                 <td>
-                                    {{ $item->qty }}
+                                    {{ $order->customer_email }}
                                 </td>
-
                                 <td>
-                                    @if (core()->getConfigData('sales.taxes.sales.display_subtotal') == 'including_tax')
-                                        {!! core()->formatBasePrice($item->base_total_incl_tax, true) !!}
-                                    @elseif (core()->getConfigData('sales.taxes.sales.display_subtotal') == 'both')
-                                        {!! core()->formatBasePrice($item->base_total_incl_tax, true) !!}
-
-                                        <div class="small-text">
-                                            @lang('admin::app.sales.invoices.invoice-pdf.excl-tax')
-
-                                            <span>
-                                                {{ core()->formatPrice($item->base_total) }}
-                                            </span>
-                                        </div>
-                                    @else
-                                        {!! core()->formatBasePrice($item->base_total, true) !!}
-                                    @endif
+                                    {{ $order->total_item_count }}
                                 </td>
                             </tr>
                         @endforeach
-                    </tbody> --}}
+                    </tbody> 
                 </table>
             </div>
         </div>

@@ -275,9 +275,11 @@ class OrderController extends Controller
     {
         // $order = $this->orderRepository->findOrFail($id);
 
+        // dd($this->orderRepository->all());
+        $orders = $this->orderRepository->all();
+
         return $this->downloadPDF(
-            view('admin::sales.orders.pdf')->render(),
-            // 'order-'.$order->created_at->format('d-m-Y')
+            view('admin::sales.orders.pdf', compact('orders'))->render()
         );
         
         // $order = $this->orderRepository->findOrFail($id);
