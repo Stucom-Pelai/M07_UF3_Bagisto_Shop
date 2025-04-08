@@ -61,14 +61,15 @@
                     </button>
                 </x-slot>
             </x-admin::modal>
-            <!-- add if -->
+
+            <!-- Download Orders PDF -->
+            @if(Route::current()->getName() == 'admin.sales.orders.index')
             <button class="primary-button hover:bg-blue-200 dark:text-white dark:hover:bg-blue-800">
-                <a
-                                    href="{{ route('admin.sales.orders.print') }}"
-                                >
-                                    @lang('admin::app.sales.orders.view.download-pdf')
-                                </a>
-                                </button>
+                <a href="{{ route('admin.sales.orders.print') }}">
+                    @lang('admin::app.sales.orders.view.download-pdf')
+                </a>
+            </button>
+            @endif
         </div>
     </script>
 

@@ -415,7 +415,12 @@ return [
             ],
 
             'orders-pdf' => [
-                'orders'                          => 'Orders'
+                'orders'                          => 'Orders',
+                'order-id'                        => 'Order ID',
+                'status'                          => 'Status',
+                'channel'                         => 'Channel',
+                'customer-email'                  => 'Customer Email',
+                'total-items'                     => 'Total Items'
             ],
         ],
 

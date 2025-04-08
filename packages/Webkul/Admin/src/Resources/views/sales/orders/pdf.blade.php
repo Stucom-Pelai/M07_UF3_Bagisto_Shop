@@ -249,23 +249,23 @@
                     <thead>
                         <tr>
                             <th>
-                                Order ID
+                                @lang('admin::app.sales.orders.orders-pdf.order-id')
                             </th>
 
                             <th>
-                                Status
+                                @lang('admin::app.sales.orders.orders-pdf.status')
                             </th>
 
                             <th>
-                                Channel
+                                @lang('admin::app.sales.orders.orders-pdf.channel')
                             </th>
 
                             <th>
-                                Customer Email
+                                @lang('admin::app.sales.orders.orders-pdf.customer-email')
                             </th>
 
                             <th>
-                                Total Items
+                                @lang('admin::app.sales.orders.orders-pdf.total-items')
                             </th>
                         </tr>
                     </thead>
