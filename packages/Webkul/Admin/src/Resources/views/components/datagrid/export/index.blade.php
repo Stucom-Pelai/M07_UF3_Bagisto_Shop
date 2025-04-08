@@ -11,7 +11,7 @@
         type="text/x-template"
         id="v-datagrid-export-template"
     >
-        <div>
+        <div class="flex">
             <x-admin::modal ref="exportModal">
                 <x-slot:toggle>
                     <button class="transparent-button hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800">
@@ -61,6 +61,15 @@
                     </button>
                 </x-slot>
             </x-admin::modal>
+
+            <!-- Download Orders PDF -->
+            @if(Route::current()->getName() == 'admin.sales.orders.index')
+            <button class="primary-button hover:bg-blue-200 dark:text-white dark:hover:bg-blue-800">
+                <a href="{{ route('admin.sales.orders.print') }}">
+                    @lang('admin::app.sales.orders.view.download-pdf')
+                </a>
+            </button>
+            @endif
         </div>
     </script>
 
@@ -100,7 +109,10 @@
                  * @param {object} data - Object containing available and applied properties.
                  * @returns {void}
                  */
-                updateProperties({ available, applied }) {
+                updateProperties({
+                    available,
+                    applied
+                }) {
                     this.available = available;
 
                     this.applied = applied;
@@ -112,8 +124,11 @@
                  * @returns {void}
                  */
                 download() {
-                    if (! this.available?.records?.length) {
-                        this.$emitter.emit('add-flash', { type: 'warning', message: '@lang('admin::app.export.no-records')' });
+                    if (!this.available?.records?.length) {
+                        this.$emitter.emit('add-flash', {
+                            type: 'warning',
+                            message: '@lang('admin::app.export.no-records')'
+                        });
 
                         this.$refs.exportModal.toggle();
                     } else {
@@ -151,7 +166,8 @@
                                  */
                                 const link = document.createElement('a');
                                 link.href = url;
-                                link.setAttribute('download', `${(Math.random() + 1).toString(36).substring(7)}.${this.format}`);
+                                link.setAttribute('download',
+                                    `${(Math.random() + 1).toString(36).substring(7)}.${this.format}`);
 
                                 /**
                                  * Adding a link to a document, clicking on the link, and then removing the link.
