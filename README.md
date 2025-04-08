@@ -45,7 +45,12 @@ composer install
 cp .env.example .env
 ```
 
-4. Create database bagisto and configure .env
+4. Create the database using the Artisan command:
+
+```bash
+php artisan make:database bagisto
+```
+Then, configure the .env file with the database name: DB_DATABASE=bagisto
 
 5. Generate an application key
 
