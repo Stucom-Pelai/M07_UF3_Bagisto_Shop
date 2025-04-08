@@ -23,24 +23,27 @@ class Product
     public function __construct(
         protected ProductRepository $productRepository,
         protected URLRewriteRepository $urlRewriteRepository
-    ) {}
+    ) {
+    }
 
     /**
-     * After product is updated
+     * Before product is updated
      *
      * @param  int  $id
      * @return void
      */
     public function beforeUpdate($id)
     {
+
         $currentURLKey = request()->input('url_key');
 
-        if (! $currentURLKey) {
+        if (!$currentURLKey) {
             return;
         }
 
         $product = $this->productRepository->find($id);
 
+        session(["beforePrice" => $product['price']]);
         if ($currentURLKey === $product->url_key) {
             return;
         }
@@ -86,10 +89,10 @@ class Product
         Event::dispatch('marketing.search_seo.url_rewrites.create.before');
 
         $urlRewrite = $this->urlRewriteRepository->create([
-            'entity_type'   => 'product',
-            'request_path'  => $product->url_key,
-            'target_path'   => $currentURLKey ?? '',
-            'locale'        => app()->getLocale(),
+            'entity_type' => 'product',
+            'request_path' => $product->url_key,
+            'target_path' => $currentURLKey ?? '',
+            'locale' => app()->getLocale(),
             'redirect_type' => self::PERMANENT_REDIRECT_CODE,
         ]);
 
@@ -111,7 +114,7 @@ class Product
          * if already exists for the request path
          */
         $urlRewrites = $this->urlRewriteRepository->findWhere([
-            'entity_type'  => 'product',
+            'entity_type' => 'product',
             'request_path' => $product->url_key,
         ]);
 
