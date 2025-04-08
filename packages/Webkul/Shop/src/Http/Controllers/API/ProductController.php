@@ -136,22 +136,7 @@ class ProductController extends APIController
 
     public function addProduct(): JsonResponse
     {
-        try {
-            $this->validate(request(), [
-                'type'                => 'required',
-                'attribute_family_id' => 'required',
-                'sku'                 => ['required', 'unique:products,sku', new Slug],
-                'super_attributes'    => 'array|min:1',
-                'super_attributes.*'  => 'array|min:1',
-            ]);
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            // Handle validation exception
-            $errors = $e->validator->errors();
-            return new JsonResponse([
-                'error' => 'Validation failed.',
-                'messages' => $errors,
-            ], 422);
-        }
+
 
         $product = $this->productRepository->findOneByField('sku', request()->sku);
         if ($product) {
