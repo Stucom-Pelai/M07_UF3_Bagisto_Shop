@@ -30,11 +30,19 @@ Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'
     });
 
     Route::controller(ProductController::class)->prefix('products')->group(function () {
-        Route::get('', 'index')->name('shop.api.products.index');
+        Route::get('', 'getAllProducts')->name('shop.api.products.getAllProducts');
 
         Route::get('{id}/related', 'relatedProducts')->name('shop.api.products.related.index');
 
         Route::get('{id}/up-sell', 'upSellProducts')->name('shop.api.products.up-sell.index');
+
+        Route::get('{id}', 'getOneProduct')->name('shop.api.products.getOneProduct');
+
+        Route::delete('{id}', 'deleteOneProduct')->name('shop.api.products.deleteOneProduct');
+
+        Route::post('', 'addProduct')->name('shop.api.products.addProduct');
+
+        Route::put('{id}', 'updateProduct')->name('shop.api.products.updateProduct');
     });
 
     Route::controller(ReviewController::class)->prefix('product/{id}')->group(function () {
