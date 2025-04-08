@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Mail;
 use PharIo\Manifest\Email;
 use Webkul\Admin\Http\Resources\WishlistItemResource;
+use Webkul\Admin\Mail\Customer\DropPriceNotification;
 use Webkul\Customer\Models\Customer;
 use Webkul\Customer\Models\Wishlist;
+use Webkul\Notification\Models\Notification;
 use Webkul\Product\Helpers\Indexers\Flat as FlatIndexer;
 use Webkul\Product\Jobs\ElasticSearch\DeleteIndex as DeleteElasticSearchIndexJob;
 use Webkul\Product\Jobs\ElasticSearch\UpdateCreateIndex as UpdateCreateElasticSearchIndexJob;
@@ -18,6 +20,8 @@ use Webkul\Product\Repositories\ProductBundleOptionProductRepository;
 use Webkul\Product\Repositories\ProductGroupedProductRepository;
 use Webkul\Product\Repositories\ProductRepository;
 use Webkul\Shop\Http\Controllers\Customer\Account\WishlistController;
+
+use function PHPSTORM_META\map;
 
 class Product
 {
@@ -61,6 +65,7 @@ class Product
         $this->flatIndexer->refresh($product);
 
         $productIds = $this->getAllRelatedProductIds($product);
+        $customerEmails = [];
 
         Bus::chain([
             new UpdateCreateInventoryIndexJob($productIds),
@@ -71,11 +76,14 @@ class Product
         $beforePrice = session("beforePrice");
 
         if ($product['price'] < $beforePrice) {
-            $customerEmails = Customer::whereIn('id',Wishlist::where('product_id', $product['id'])->pluck('customer_id')
-            )->get(['email']);
-            foreach ($customerEmails as $key => $value) {
-                die($value["email"]);
-            }
+            $customers = Customer::whereIn('id', Wishlist::where('product_id', $product['id'])->pluck('customer_id'))->get();
+
+
+            $customerEmails = $customers->map(fn($customer) => $customer['email'])->toArray();
+
+            Mail::to($customerEmails)->send(new DropPriceNotification(
+                $product
+            ));
         }
     }
 
