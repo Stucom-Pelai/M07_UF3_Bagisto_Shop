@@ -413,6 +413,15 @@ return [
                 'view'                           => 'View',
                 'write-your-comment'             => 'Write your comment',
             ],
+
+            'orders-pdf' => [
+                'orders'                          => 'Orders',
+                'order-id'                        => 'Order ID',
+                'status'                          => 'Status',
+                'channel'                         => 'Channel',
+                'customer-email'                  => 'Customer Email',
+                'total-items'                     => 'Total Items'
+            ],
         ],
 
         'shipments' => [
@@ -4390,7 +4399,7 @@ return [
         'export'     => 'Export',
         'no-records' => 'Nothing to export',
         'xls'        => 'XLS',
-        'xlsx'       => 'XLSX',
+        'xlsx'       => 'XLSX'
     ],
 
     'validations' => [

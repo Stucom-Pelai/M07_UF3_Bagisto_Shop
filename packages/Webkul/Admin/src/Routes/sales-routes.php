@@ -47,6 +47,8 @@ Route::group(['middleware' => ['admin'], 'prefix' => config('app.admin_url')], f
             Route::post('comment/{order_id}', 'comment')->name('admin.sales.orders.comment');
 
             Route::get('search', 'search')->name('admin.sales.orders.search');
+
+            Route::get('print', 'printOrder')->name('admin.sales.orders.print');
         });
 
         /**

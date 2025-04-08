@@ -72,6 +72,8 @@
 
         @stack('styles')
 
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
         <style>
             {!! core()->getConfigData('general.content.custom_scripts.custom_css') !!}
         </style>

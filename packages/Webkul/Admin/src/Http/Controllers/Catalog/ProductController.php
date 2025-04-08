@@ -26,8 +26,8 @@ use Webkul\Product\Repositories\ProductRepository;
 class ProductController extends Controller
 {
     /*
-    * Using const variable for status
-    */
+     * Using const variable for status
+     */
     const ACTIVE_STATUS = 1;
 
     /**
@@ -43,7 +43,8 @@ class ProductController extends Controller
         protected ProductInventoryRepository $productInventoryRepository,
         protected ProductRepository $productRepository,
         protected CustomerRepository $customerRepository,
-    ) {}
+    ) {
+    }
 
     /**
      * Display a listing of the resource.
@@ -87,16 +88,16 @@ class ProductController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'type'                => 'required',
+            'type' => 'required',
             'attribute_family_id' => 'required',
-            'sku'                 => ['required', 'unique:products,sku', new Slug],
-            'super_attributes'    => 'array|min:1',
-            'super_attributes.*'  => 'array|min:1',
+            'sku' => ['required', 'unique:products,sku', new Slug],
+            'super_attributes' => 'array|min:1',
+            'super_attributes.*' => 'array|min:1',
         ]);
 
         if (
             ProductType::hasVariants(request()->input('type'))
-            && ! request()->has('super_attributes')
+            && !request()->has('super_attributes')
         ) {
             $configurableFamily = $this->attributeFamilyRepository
                 ->find(request()->input('attribute_family_id'));
@@ -148,10 +149,10 @@ class ProductController extends Controller
      */
     public function update(ProductForm $request, int $id)
     {
+
         Event::dispatch('catalog.product.update.before', $id);
 
         $product = $this->productRepository->update(request()->all(), $id);
-
         Event::dispatch('catalog.product.update.after', $product);
 
         session()->flash('success', trans('admin::app.catalog.products.update-success'));
@@ -175,7 +176,7 @@ class ProductController extends Controller
         Event::dispatch('catalog.product.update.after', $product);
 
         return response()->json([
-            'message'      => __('admin::app.catalog.products.saved-inventory-message'),
+            'message' => __('admin::app.catalog.products.saved-inventory-message'),
             'updatedTotal' => $this->productInventoryRepository->where('product_id', $product->id)->sum('qty'),
         ]);
     }
@@ -293,7 +294,7 @@ class ProductController extends Controller
             Event::dispatch('catalog.product.update.before', $productId);
 
             $product = $this->productRepository->update([
-                'status'  => $massUpdateRequest->input('value'),
+                'status' => $massUpdateRequest->input('value'),
             ], $productId, ['status']);
 
             Event::dispatch('catalog.product.update.after', $product);
@@ -332,17 +333,17 @@ class ProductController extends Controller
             $searchEngine = 'elastic';
 
             $indexNames = core()->getAllChannels()->map(function ($channel) {
-                return 'products_'.$channel->code.'_'.app()->getLocale().'_index';
+                return 'products_' . $channel->code . '_' . app()->getLocale() . '_index';
             })->toArray();
         }
 
         $channelId = $this->customerRepository->find(request('customer_id'))->channel_id ?? null;
 
         $params = [
-            'index'      => $indexNames ?? null,
-            'name'       => request('query'),
-            'sort'       => 'created_at',
-            'order'      => 'desc',
+            'index' => $indexNames ?? null,
+            'name' => request('query'),
+            'sort' => 'created_at',
+            'order' => 'desc',
             'channel_id' => $channelId,
         ];
 
@@ -367,7 +368,7 @@ class ProductController extends Controller
     public function download($productId, $attributeId)
     {
         $productAttribute = $this->productAttributeValueRepository->findOneWhere([
-            'product_id'   => $productId,
+            'product_id' => $productId,
             'attribute_id' => $attributeId,
         ]);
 
