@@ -33,14 +33,14 @@ class createDatabaseCommand extends Command
             return self::FAILURE;
         }
 
+        if ($name == env('DB_DATABASE')) {
+            $this->error("Cannot create database: {$name} is already configured in your .ENV file but doesn't exist. Please use a different name or check your database connection.");
+            return self::FAILURE;
+        }
+
         try {
-            $exist = DB::select("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = ?",[$name]);
-            if ($exist) {
-                $this->info("The {$name} database already exists.");
-            } else {
-                DB::statement("CREATE DATABASE IF NOT EXISTS {$name}");
-                $this->info("The {$name} database was created successfully.");
-            }
+            DB::statement("CREATE DATABASE IF NOT EXISTS {$name}");
+            $this->info("The {$name} database was created successfully.");
             return self::SUCCESS;
         }catch(\Exception $e) {
             $this->info("Failed to create database: {$e->getMessage()}");
