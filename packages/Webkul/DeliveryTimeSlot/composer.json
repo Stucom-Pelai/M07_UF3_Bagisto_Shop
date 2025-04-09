@@ -1,0 +1,28 @@
+{
+    "name": "bagisto/laravel-delivery-time-slot",
+    "license": "MIT",
+    "description" : "Delivery Time Slot package",
+    "authors": [
+        {
+            "name": "Bagisto",
+            "email": "support@bagisto.com"
+        }
+    ],
+    "require": {
+        "konekt/concord": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webkul\\DeliveryTimeSlot\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\DeliveryTimeSlot\\Providers\\DeliveryTimeSlotServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}
