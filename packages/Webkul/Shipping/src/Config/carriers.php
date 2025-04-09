@@ -19,4 +19,12 @@ return [
         'default_rate' => '0',
         'class'        => 'Webkul\Shipping\Carriers\Free',
     ],
+    'storepickup' => [     // Nueva entrada para recogida en tienda
+        'code'         => 'storepickup',
+        'title'        => 'Pick up in shop',
+        'description'  => 'Pick up your order in our shop.',
+        'active'       => true,
+        'default_rate' => '0',  
+        'class'        => 'Webkul\Shipping\Carriers\StorePickup',
+    ],
 ];
