@@ -51,7 +51,12 @@ Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'
         Route::post('review', 'store')->name('shop.api.products.reviews.store');
 
         Route::get('reviews/{review_id}/translate', 'translate')->name('shop.api.products.reviews.translate');
-        
+
+        Route::get('review/{review_id}', 'getById')->name('shop.api.products.reviews.getById');
+
+        Route::put('review/{review_id}', 'update')->name('shop.api.products.reviews.update');
+
+        Route::delete('review/{review_id}', 'destroy')->name('shop.api.products.reviews.destroy');
     });
 
     Route::controller(CompareController::class)->prefix('compare-items')->group(function () {
