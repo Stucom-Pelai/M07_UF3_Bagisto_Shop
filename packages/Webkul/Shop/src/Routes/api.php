@@ -30,7 +30,7 @@ Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'
     });
 
     Route::controller(ProductController::class)->prefix('products')->group(function () {
-        Route::get('', 'getAllProducts')->name('shop.api.products.getAllProducts');
+        Route::get('', 'index')->name('shop.api.products.index');
 
         Route::get('{id}/related', 'relatedProducts')->name('shop.api.products.related.index');
 
@@ -51,6 +51,7 @@ Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'
         Route::post('review', 'store')->name('shop.api.products.reviews.store');
 
         Route::get('reviews/{review_id}/translate', 'translate')->name('shop.api.products.reviews.translate');
+        
     });
 
     Route::controller(CompareController::class)->prefix('compare-items')->group(function () {
