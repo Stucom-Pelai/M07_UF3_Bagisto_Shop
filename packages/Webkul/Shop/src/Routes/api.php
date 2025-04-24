@@ -105,7 +105,7 @@ Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'
         
         Route::get('{id}', 'show')->name('shop.api.shipments.show');
 
-        Route::post('', 'store')->name('shop.api.shipments.store');
+        Route::post('{orderId}', 'store')->name('shop.api.shipments.store');
         
         Route::put('{id}', 'update')->name('shop.api.shipments.update');
         
