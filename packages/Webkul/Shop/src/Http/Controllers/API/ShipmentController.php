@@ -73,86 +73,85 @@ class ShipmentController extends APIController
 
     public function store(int $orderId, OrderRepository $orderRepository): JsonResponse
     {
-        $order = $orderRepository->findOrFail($orderId);
+        try {
+            $order = $orderRepository->findOrFail($orderId);
 
-        if (! $order->canShip()) {
+            if (! $order->canShip()) {
+                return new JsonResponse([
+                    'error' => 'Shipment could not be created.',
+                ], 404);
+            }
+
+            $inventory = InventorySource::where('code', request()->input('shipment.source'))->first();
+
+            $this->validate(request(), [
+                'shipment.source'    => 'required',
+                'shipment.items.*.*' => 'required|numeric|min:0',
+            ]);
+
+            $data = request()->only(['shipment', 'carrier_name']);
+
+            if (! $this->shipmentController->isInventoryValidate($data)) {
+                return new JsonResponse([
+                    'error' => 'Shipment could not be created because of inventory.',
+                ], 404);
+            }
+
+            $this->shipmentRepository->create(array_merge($data, [
+                'order_id' => $orderId,
+                'inventory_source_id' => $inventory
+            ]), $order->state);
+
             return new JsonResponse([
-                'error' => 'Shipment could not be created.',
+                'message' => 'Shipment created successfully.',
+                'data' => $data,
+            ]);
+        } catch (\Exception $e) {
+            return new JsonResponse([
+                'error' => 'Shipment not found or an error occurred.',
+                'message' => $e->getMessage(),
             ], 404);
         }
-
-        $inventory = InventorySource::where('code', request()->input('shipment.source'))->first();
-
-        // $this->validate(request(), [
-        //     'shipment.source'    => 'required',
-        //     'shipment.items.*.*' => 'required|numeric|min:0',
-        // ]);
-
-        $data = request()->only(['shipment', 'carrier_name']);
-
-        // if (! $this->shipmentController->isInventoryValidate($inventory)) {
-        //     return new JsonResponse([
-        //         'error' => 'Shipment could not be created because of inventory.',
-        //     ], 404);
-        // }
-
-        $this->shipmentRepository->create(array_merge($data, [
-            'order_id' => $orderId,
-            'inventory_source_id' => $inventory->id,
-            'inventory_source_name' => $inventory->name,
-        ]));
-
-        return new JsonResponse([
-            'message' => 'Shipment created successfully.',
-            'data' => $data,
-        ]);
     }
 
-    // public function store(Request $request): JsonResponse
+    // public function update(int $id, Request $request): JsonResponse
     // {
-    //    $validatedData = $request->validate([
-    //         'status' => 'nullable|string',
-    //         'total_qty' => 'required|integer|min:1',
-    //         'total_weight' => 'required|numeric|min:0',
-    //         'carrier_code' => 'nullable|string',
-    //         'carrier_title' => 'nullable|string',
-    //         'track_number' => 'nullable|string',
-    //         'email_sent' => 'required|boolean',
-    //         'customer_id' => 'required|integer|exists:customers,id',
-    //         'customer_type' => 'required|string',
-    //         'order_id' => 'required|integer|exists:orders,id',
-    //         'order_address_id' => 'required|integer|exists:order_addresses,id',
-    //         'inventory_source_id' => 'required|integer|exists:inventory_sources,id',
-    //         'inventory_source_name' => 'required|string'
-    //     ]);
+    //     try {
+    //         $shipment = $this->shipmentRepository->findOrFail($id);
 
-    //     // order validation
-    //     $order = $this->shipmentRepository->getOrder($validatedData['order_id']);
+    //         $this->validate($request, [
+    //             'shipment.source'    => 'required',
+    //             'shipment.items.*.*' => 'required|numeric|min:0',
+    //         ]);
 
-    //     if (!$order) {
+    //         $inventory = InventorySource::where('code', $request->input('shipment.source'))->first();
+
+    //         if (! $inventory) {
+    //             return new JsonResponse([
+    //                 'error' => 'Invalid inventory source.',
+    //             ], 404);
+    //         }
+
+    //         $data = $request->only(['shipment', 'carrier_name']);
+
+    //         if (! $this->shipmentController->isInventoryValidate($data)) {
+    //             return new JsonResponse([
+    //                 'error' => 'Shipment could not be updated because of inventory.',
+    //             ], 404);
+    //         }
+
+    //         $shipment->update(array_merge($data, [
+    //             'inventory_source_id' => $inventory->id,
+    //         ]));
+
     //         return new JsonResponse([
-    //             'error' => 'Order not found.',
-    //         ], 404);
-    //     }
-
-    //     $shipment = $this->shipmentRepository->create($validatedData);
-
-    //     return new JsonResponse([
-    //         'data' => $shipment,
-    //         'message' => 'Shipment created successfully.',
-    //     ]);
-    // }
-
-    // public function update(Request $request, $id): JsonResponse
-    // {
-    //     $product = $this->productRepository->update(request()->all(), $id);
-    //     if ($product) {
-    //         return new JsonResponse([
-    //             'data' => new ProductResource($product),
+    //             'message' => 'Shipment updated successfully.',
+    //             'data' => $shipment,
     //         ], 200);
-    //     } else {
+    //     } catch (\Exception $e) {
     //         return new JsonResponse([
-    //             'error' => 'Product not found or an error occurred.',
+    //             'error' => 'Shipment not found or an error occurred.',
+    //             'message' => $e->getMessage(),
     //         ], 404);
     //     }
     // }
