@@ -114,45 +114,32 @@ class ShipmentController extends APIController
         }
     }
 
-    // public function update(int $id, Request $request): JsonResponse
-    // {
-    //     try {
-    //         $shipment = $this->shipmentRepository->findOrFail($id);
+    public function update(int $id, Request $request): JsonResponse
+    {
+        try {
+            $shipment = $this->shipmentRepository->findOrFail($id);
+            
+            $allowedFields = ['carrier_title', 'track_number', 'status', 'email_sent'];
 
-    //         $this->validate($request, [
-    //             'shipment.source'    => 'required',
-    //             'shipment.items.*.*' => 'required|numeric|min:0',
-    //         ]);
+            $data = $request->only($allowedFields);
 
-    //         $inventory = InventorySource::where('code', $request->input('shipment.source'))->first();
+            if (empty($data)) {
+                return response()->json([
+                    'message' => 'No valid fields provided for update.',
+                ], 422);
+            }
 
-    //         if (! $inventory) {
-    //             return new JsonResponse([
-    //                 'error' => 'Invalid inventory source.',
-    //             ], 404);
-    //         }
-
-    //         $data = $request->only(['shipment', 'carrier_name']);
-
-    //         if (! $this->shipmentController->isInventoryValidate($data)) {
-    //             return new JsonResponse([
-    //                 'error' => 'Shipment could not be updated because of inventory.',
-    //             ], 404);
-    //         }
-
-    //         $shipment->update(array_merge($data, [
-    //             'inventory_source_id' => $inventory->id,
-    //         ]));
-
-    //         return new JsonResponse([
-    //             'message' => 'Shipment updated successfully.',
-    //             'data' => $shipment,
-    //         ], 200);
-    //     } catch (\Exception $e) {
-    //         return new JsonResponse([
-    //             'error' => 'Shipment not found or an error occurred.',
-    //             'message' => $e->getMessage(),
-    //         ], 404);
-    //     }
-    // }
+            $shipment->update($data);
+            
+            return new JsonResponse([
+                'message' => 'Shipment updated successfully.',
+                'data' => $shipment,
+            ], 200);
+        } catch (\Exception $e) {
+            return new JsonResponse([
+                'error' => 'Shipment not found or an error occurred.',
+                'message' => $e->getMessage(),
+            ], 404);
+        }
+    }
 }
