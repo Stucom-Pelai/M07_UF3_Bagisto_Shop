@@ -10,6 +10,7 @@ use Webkul\Shop\Http\Controllers\API\CustomerController;
 use Webkul\Shop\Http\Controllers\API\OnepageController;
 use Webkul\Shop\Http\Controllers\API\ProductController;
 use Webkul\Shop\Http\Controllers\API\ReviewController;
+use Webkul\Shop\Http\Controllers\API\ShipmentController;
 use Webkul\Shop\Http\Controllers\API\WishlistController;
 
 Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'], function () {
@@ -97,6 +98,19 @@ Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'
         Route::post('payment-methods', 'storePaymentMethod')->name('shop.checkout.onepage.payment_methods.store');
 
         Route::post('orders', 'storeOrder')->name('shop.checkout.onepage.orders.store');
+    });
+
+    Route::controller(ShipmentController::class)->prefix('shipments')->group(function () {
+        Route::get('', 'index')->name('shop.api.shipments.index');
+        
+        Route::get('{id}', 'show')->name('shop.api.shipments.show');
+
+        Route::post('{orderId}', 'store')->name('shop.api.shipments.store');
+        
+        Route::put('{id}', 'update')->name('shop.api.shipments.update');
+        
+        Route::delete('{id}', 'destroy')->name('shop.api.shipments.destroy'); 
+
     });
 
     /**
