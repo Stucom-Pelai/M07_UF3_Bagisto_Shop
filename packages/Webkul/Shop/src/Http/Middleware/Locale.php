@@ -35,7 +35,7 @@ class Locale
 
         app()->setLocale($localeCode);
         session()->put('locale', $localeCode);
-        unset($request['locale']);
+        // unset($request['locale']);
 
         return $next($request);
     }
