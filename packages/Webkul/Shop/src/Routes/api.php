@@ -22,17 +22,17 @@ Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'
     Route::controller(CategoryController::class)->prefix('categories')->group(function () {
         Route::get('', 'index')->name('shop.api.categories.index');
 
+        Route::get('tree', 'tree')->name('shop.api.categories.tree');
+
+        Route::get('attributes', 'getAttributes')->name('shop.api.categories.attributes');
+
         Route::post('create', action: 'store')->name('shop.api.categories.store');
 
         Route::get('{id}', 'show')->name('shop.api.categories.show');
 
-        Route::delete('{id}', [CategoryController::class, 'delete'])->name('api.catalog.categories.delete');
+        Route::delete('{id}',  'delete')->name('api.catalog.categories.delete');
 
         Route::put('{id}', 'update')->name('shop.api.categories.update');
-
-        Route::get('tree', 'tree')->name('shop.api.categories.tree');
-
-        Route::get('attributes', 'getAttributes')->name('shop.api.categories.attributes');
 
         Route::get('max-price/{id?}', 'getProductMaxPrice')->name('shop.api.categories.max_price');
     });
