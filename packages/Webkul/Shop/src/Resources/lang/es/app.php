@@ -860,16 +860,28 @@ return [
     ],
 
     'home' => [
+        'about' => [
+            'page-title' => 'Sobre Nosotros',
+            'meta-description' => 'Conoce más sobre nuestra empresa, misión y equipo',
+            'meta-keywords' => 'sobre nosotros, información de la empresa, nuestra historia',
+            'our-story' => 'Nuestra Historia',
+            'our-story-content' => 'Fundada en 2010, comenzamos como un pequeño equipo con grandes sueños. Hoy servimos a clientes en todo el mundo con nuestros productos de alta calidad y servicio excepcional.',
+            'our-mission' => 'Nuestra Misión',
+            'our-mission-content' => 'Proporcionar soluciones innovadoras que mejoren la vida de nuestros clientes manteniendo los más altos estándares de calidad e integridad.',
+            'our-team' => 'Nuestro Equipo',
+            'our-team-content' => 'Somos un grupo diverso de profesionales unidos por nuestra pasión por la excelencia y compromiso con la satisfacción del cliente.'
+        ],
+
         'contact' => [
-            'about'         => 'Déjanos una nota y te responderemos lo más rápido posible',
-            'desc'          => '¿En qué estás pensando?',
-            'describe-here' => 'Describe aquí',
+            'about'         => 'Escríbenos una nota y nos pondremos en contacto contigo lo antes posible',
+            'desc'          => '¿Qué tienes en mente?',
+            'describe-here' => 'Descríbelo aquí',
             'email'         => 'Correo electrónico',
             'message'       => 'Mensaje',
             'name'          => 'Nombre',
             'phone-number'  => 'Número de teléfono',
             'submit'        => 'Enviar',
-            'title'         => 'Contáctanos',
+            'title'         => 'Contacto',
         ],
 
         'index' => [

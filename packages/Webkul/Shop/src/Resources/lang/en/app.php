@@ -860,6 +860,18 @@ return [
     ],
 
     'home' => [
+        'about' => [
+            'page-title' => 'About Us',
+            'meta-description' => 'Learn more about our company, mission and team',
+            'meta-keywords' => 'about us, company info, our story',
+            'our-story' => 'Our Story',
+            'our-story-content' => 'Founded in 2010, we started as a small team with big dreams. Today we serve customers worldwide with our high quality products and exceptional service.',
+            'our-mission' => 'Our Mission', 
+            'our-mission-content' => 'To provide innovative solutions that improve our customers lives while maintaining the highest standards of quality and integrity.',
+            'our-team' => 'Our Team',
+            'our-team-content' => 'We are a diverse group of professionals united by our passion for excellence and commitment to customer satisfaction.'
+        ],
+
         'contact' => [
             'about'         => 'Jot us a note, and we’ll get back to you as quickly as possible',
             'desc'          => ' What’s on your mind?',
