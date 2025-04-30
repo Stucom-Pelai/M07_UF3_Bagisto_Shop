@@ -15,6 +15,10 @@ use Webkul\Shop\Http\Controllers\API\WishlistController;
 use Webkul\Shop\Http\Controllers\API\RefundController;
 
 Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'], function () {
+    Route::controller(CoreController::class)->prefix('core')->group(function () {
+        Route::get('countries', 'getCountries')->name('shop.api.core.countries');
+        Route::get('states', 'getStates')->name('shop.api.core.states');
+    });
     Route::controller(RefundController::class)->prefix('refunds')->group(function () {
         Route::get('', 'index')->name('shop.api.refunds.index');
         Route::post('', 'store')->name('shop.api.refunds.store');
