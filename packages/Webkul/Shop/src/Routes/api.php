@@ -12,12 +12,15 @@ use Webkul\Shop\Http\Controllers\API\ProductController;
 use Webkul\Shop\Http\Controllers\API\ReviewController;
 use Webkul\Shop\Http\Controllers\API\ShipmentController;
 use Webkul\Shop\Http\Controllers\API\WishlistController;
+use Webkul\Shop\Http\Controllers\API\RefundController;
 
 Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'], function () {
-    Route::controller(CoreController::class)->prefix('core')->group(function () {
-        Route::get('countries', 'getCountries')->name('shop.api.core.countries');
-
-        Route::get('states', 'getStates')->name('shop.api.core.states');
+    Route::controller(RefundController::class)->prefix('refunds')->group(function () {
+        Route::get('', 'index')->name('shop.api.refunds.index');
+        Route::post('', 'store')->name('shop.api.refunds.store');
+        Route::get('{id}', 'show')->name('shop.api.refunds.show');
+        Route::put('{id}', 'update')->name('shop.api.refunds.update');
+        Route::delete('{id}', 'destroy')->name('shop.api.refunds.destroy');
     });
 
     Route::controller(CategoryController::class)->prefix('categories')->group(function () {
@@ -63,6 +66,8 @@ Route::group(['middleware' => ['locale', 'theme', 'currency'], 'prefix' => 'api'
 
         Route::get('reviews/{review_id}/translate', 'translate')->name('shop.api.products.reviews.translate');
     });
+
+    
 
     Route::controller(CompareController::class)->prefix('compare-items')->group(function () {
         Route::get('', 'index')->name('shop.api.compare.index');
